@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply font-sans text-body bg-white antialiased; font-size: 16px; line-height: 160%; }
+  :focus-visible { outline: 2px solid theme('colors.primary'); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition-duration: 0.01ms !important; } }
+}
+
+@layer components {
+  /* Heading styles: Geist, 600, -0.02em */
+  .t-display { font-weight: 700; font-size: 56px; line-height: 100%; letter-spacing: -0.02em; }
+  .t-h1 { font-weight: 600; font-size: 40px; line-height: 100%; letter-spacing: -0.02em; }
+  .t-h2 { font-weight: 600; font-size: 32px; line-height: 120%; letter-spacing: -0.02em; }
+  .t-h3 { font-weight: 600; font-size: 26px; line-height: 120%; letter-spacing: -0.02em; }
+  .t-h4 { font-weight: 600; font-size: 24px; line-height: 120%; letter-spacing: -0.02em; }
+  .t-h5 { font-weight: 600; font-size: 20px; line-height: 120%; letter-spacing: -0.02em; }
+  .t-h6 { font-weight: 600; font-size: 20px; line-height: 120%; letter-spacing: -0.02em; }
+  .t-highlight { font-weight: 500; line-height: 100%; }
+  .t-button { font-weight: 600; line-height: 100%; }
+  .t-label { @apply font-mona; font-weight: 500; font-size: 14px; line-height: 100%; }
+
+  @media (min-width: 768px) {
+    .t-display { font-size: 80px; }
+    .t-h1 { font-size: 64px; }
+    .t-h2 { font-size: 38px; }
+    .t-h3 { font-size: 34px; }
+    .t-h4 { font-size: 26px; }
+    .t-h5 { font-size: 20px; }
+  }
+  @media (min-width: 1200px) {
+    .t-display { font-size: 100px; }
+    .t-h1 { font-size: 80px; }
+    .t-h2 { font-size: 48px; }
+    .t-h3 { font-size: 40px; }
+    .t-h4 { font-size: 32px; }
+    .t-h5 { font-size: 24px; }
+  }
+}
