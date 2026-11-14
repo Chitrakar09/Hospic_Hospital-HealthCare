@@ -3,7 +3,7 @@ import { NAV, HERO } from '../data/content.js'
 import Logo from './Logo.jsx'
 import { PrimaryButton } from './ui.jsx'
 import { Menu, Close } from './Icons.jsx'
-
+import { NavLink } from 'react-router'
 export default function Header() {
   const [open, setOpen] = useState(false)
   return (
@@ -12,9 +12,9 @@ export default function Header() {
         <Logo />
         <nav aria-label="Main" className="hidden items-center gap-9 desktop:flex">
           {NAV.map((n) => (
-            <a key={n.label} href={n.href} className="t-highlight text-white/90 transition-colors hover:text-white">
+            <NavLink key={n.label} to={n.href} className="t-highlight text-white/90 transition-colors hover:text-white">
               {n.label}
-            </a>
+            </NavLink>
           ))}
         </nav>
         <div className="hidden desktop:block">
@@ -34,7 +34,7 @@ export default function Header() {
       {open && (
         <nav id="mobile-menu" aria-label="Mobile" className="mx-auto flex w-full max-w-container flex-col gap-1 bg-dark p-5 desktop:hidden">
           {NAV.map((n) => (
-            <a key={n.label} href={n.href} onClick={() => setOpen(false)} className="t-h6 border-b border-stroke-dark py-4 text-white">
+            <a key={n.label} href={""} onClick={() => setOpen(false)} className="t-h6 border-b border-stroke-dark py-4 text-white">
               {n.label}
             </a>
           ))}

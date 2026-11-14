@@ -41,7 +41,7 @@ export function SectionHeading({ tag, title, align = 'left', dark = false, class
  * variant "primary": Primary bg, white text, white icon square (dark arrow)
  * variant "outline": transparent bg, 1px stroke, body text, Primary icon square (white arrow)
  */
-export function PrimaryButton({ children, href = '#appointment', variant = 'primary', as = 'a', className = '', ...rest }) {
+export function PrimaryButton({ children, href = '', variant = 'primary', as = 'a', className = '', ...rest }) {
   const Comp = as
   const styles =
     variant === 'outline'

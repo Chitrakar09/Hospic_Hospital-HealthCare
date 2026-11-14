@@ -42,7 +42,7 @@ export default function About() {
         <Tag>{ABOUT.tag}</Tag>
         <div className="flex max-w-[745px] flex-col items-start gap-10 desktop:gap-[60px]">
           <p className="t-h4 text-dark">{ABOUT.text}</p>
-          <PrimaryButton href="#about" variant="outline">{ABOUT.cta}</PrimaryButton>
+          <PrimaryButton variant="outline">{ABOUT.cta}</PrimaryButton>
         </div>
       </div>
 

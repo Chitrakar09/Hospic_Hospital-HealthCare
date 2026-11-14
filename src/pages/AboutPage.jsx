@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { ABOUT_PAGE } from '../data/about.js'
 import {AboutHero, AboutIntro,HowItWorks,Gallery,} from '../sections/About/index.js'
-import {Doctors,CTA} from '../sections/HomePage/index.js'
+import {Doctors,CTA} from '../sections/Home_page/index.js'
 
 export default function AboutPage() {
   useEffect(() => {
