@@ -39,3 +39,24 @@
     .t-h5 { font-size: 24px; }
   }
 }
+
+/* Gallery ticker: Framer tickerEffect velocity 60px/s, pauses on hover.
+   One set = 5 images + gaps (≈1665px tablet, 2400px desktop) -> 28s / 40s. */
+@keyframes gallery-scroll {
+  to { transform: translateX(-50%); }
+}
+.gallery-track {
+  animation: gallery-scroll 28s linear infinite;
+  will-change: transform;
+}
+@media (min-width: 1200px) {
+  .gallery-track { animation-duration: 40s; }
+}
+.gallery-marquee:hover .gallery-track,
+.gallery-marquee:focus-within .gallery-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .gallery-track { animation: none; }
+  .gallery-marquee { overflow-x: auto; }
+}

@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { A } from '../data/assets.js'
-import { APPOINTMENT } from '../data/content.js'
-import { Section, PrimaryButton } from '../components/ui.jsx'
+import { A } from '../../data/assets.js'
+import { APPOINTMENT } from '../../data/content.js'
+import { Section, PrimaryButton } from '../../components/ui.jsx'
 
 const field = 'w-full bg-stroke-dark px-5 py-3 text-white placeholder:text-white/50 outline-none focus-visible:ring-2 focus-visible:ring-primary'
 

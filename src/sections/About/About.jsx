@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
-import { A } from '../data/assets.js'
-import { ABOUT } from '../data/content.js'
-import { Section, Tag, PrimaryButton, Img } from '../components/ui.jsx'
+import { A } from '../../data/assets.js'
+import { ABOUT } from '../../data/content.js'
+import { Section, Tag, PrimaryButton, Img } from '../../components/ui.jsx'
 
-function CountUp({ to, suffix }) {
+export function CountUp({ to, suffix }) {
   const ref = useRef(null)
   const [value, setValue] = useState(0)
   useEffect(() => {

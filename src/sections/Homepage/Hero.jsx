@@ -1,7 +1,7 @@
-import { A } from '../data/assets.js'
-import { HERO } from '../data/content.js'
-import { PrimaryButton, Img } from '../components/ui.jsx'
-import { Star } from '../components/Icons.jsx'
+import { A } from '../../data/assets.js'
+import { HERO } from '../../data/content.js'
+import { PrimaryButton, Img } from '../../components/ui.jsx'
+import { Star } from '../../components/Icons.jsx'
 
 export default function Hero() {
   return (

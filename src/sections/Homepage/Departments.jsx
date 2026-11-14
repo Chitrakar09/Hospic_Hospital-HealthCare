@@ -1,7 +1,7 @@
-import { A } from '../data/assets.js'
-import { DEPARTMENTS } from '../data/content.js'
-import { Section, SectionHeading, PrimaryButton, Img } from '../components/ui.jsx'
-import { ArrowUpRight } from '../components/Icons.jsx'
+import { A } from '../../data/assets.js'
+import { DEPARTMENTS } from '../../data/content.js'
+import { Section, SectionHeading, PrimaryButton, Img } from '../../components/ui.jsx'
+import { ArrowUpRight } from '../../components/Icons.jsx'
 
 function DepartmentCard({ title, text, photo, icon }) {
   return (

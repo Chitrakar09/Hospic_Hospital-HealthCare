@@ -1,6 +1,6 @@
-import { A } from '../data/assets.js'
-import { BLOG } from '../data/content.js'
-import { Section, SectionHeading, Img } from '../components/ui.jsx'
+import { A } from '../../data/assets.js'
+import { BLOG } from '../../data/content.js'
+import { Section, SectionHeading, Img } from '../../components/ui.jsx'
 
 function BlogCard({ title, date, category, photo }) {
   return (

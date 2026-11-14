@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { FAQ as C } from '../data/content.js'
-import { Section, SectionHeading, PrimaryButton } from '../components/ui.jsx'
-import { Plus, Minus } from '../components/Icons.jsx'
+import { FAQ as C } from '../../data/content.js'
+import { Section, SectionHeading, PrimaryButton } from '../../components/ui.jsx'
+import { Plus, Minus } from '../../components/Icons.jsx'
 
 function Item({ q, a, open, onToggle, id }) {
   return (

@@ -1,7 +1,7 @@
-import { A } from '../data/assets.js'
-import { TESTIMONIALS } from '../data/content.js'
-import { Section, SectionHeading, Img } from '../components/ui.jsx'
-import { Play } from '../components/Icons.jsx'
+import { A } from '../../data/assets.js'
+import { TESTIMONIALS } from '../../data/content.js'
+import { Section, SectionHeading, Img } from '../../components/ui.jsx'
+import { Play } from '../../components/Icons.jsx'
 
 function TextCard({ text, name, place, avatar }) {
   return (

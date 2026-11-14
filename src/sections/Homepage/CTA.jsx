@@ -1,6 +1,6 @@
-import { A } from '../data/assets.js'
-import { CTA as C } from '../data/content.js'
-import { Section, SectionHeading, PrimaryButton } from '../components/ui.jsx'
+import { A } from '../../data/assets.js'
+import { CTA as C } from '../../data/content.js'
+import { Section, SectionHeading, PrimaryButton } from '../../components/ui.jsx'
 
 export default function CTA() {
   return (

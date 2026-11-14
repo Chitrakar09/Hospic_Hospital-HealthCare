@@ -1,6 +1,6 @@
-import { PRICING } from '../data/content.js'
-import { Section, SectionHeading, PrimaryButton } from '../components/ui.jsx'
-import { Check } from '../components/Icons.jsx'
+import { PRICING } from '../../data/content.js'
+import { Section, SectionHeading, PrimaryButton } from '../../components/ui.jsx'
+import { Check } from '../../components/Icons.jsx'
 
 function Plan({ name, price, note, text, items, featured }) {
   const dark = !!featured

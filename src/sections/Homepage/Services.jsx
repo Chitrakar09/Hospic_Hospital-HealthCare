@@ -1,6 +1,6 @@
-import { A } from '../data/assets.js'
-import { SERVICES } from '../data/content.js'
-import { Section, SectionHeading, PrimaryButton, Img } from '../components/ui.jsx'
+import { A } from '../../data/assets.js'
+import { SERVICES } from '../../data/content.js'
+import { Section, SectionHeading, PrimaryButton, Img } from '../../components/ui.jsx'
 
 function ServiceCard({ title, text, icon, photo }) {
   return (

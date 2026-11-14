@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { A } from '../data/assets.js'
-import { DOCTORS } from '../data/content.js'
-import { Section, SectionHeading, PrimaryButton } from '../components/ui.jsx'
-import { Plus, Minus, Phone, Pin } from '../components/Icons.jsx'
+import { A } from '../../data/assets.js'
+import { DOCTORS } from '../../data/content.js'
+import { Section, SectionHeading, PrimaryButton } from '../../components/ui.jsx'
+import { Plus, Minus, Phone, Pin } from '../../components/Icons.jsx'
 
 function DoctorCard({ doctor, photo }) {
   const [open, setOpen] = useState(false)

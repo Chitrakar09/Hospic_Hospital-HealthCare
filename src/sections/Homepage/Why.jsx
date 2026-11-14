@@ -1,7 +1,7 @@
-import { A } from '../data/assets.js'
-import { WHY } from '../data/content.js'
-import { Section, SectionHeading, Img } from '../components/ui.jsx'
-import { WHY_ICONS } from '../components/Icons.jsx'
+import { A } from '../../data/assets.js'
+import { WHY } from '../../data/content.js'
+import { Section, SectionHeading, Img } from '../../components/ui.jsx'
+import { WHY_ICONS } from '../../components/Icons.jsx'
 
 export default function Why() {
   return (
