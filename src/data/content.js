@@ -2,13 +2,13 @@
 export const BRAND = 'Hospic'
 
 export const NAV = [
-  { label: 'Home', href: '#top' },
-  { label: 'About', href: '#about' },
-  { label: 'Departments', href: '#departments' },
-  { label: 'Doctors', href: '#doctors' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Blog', href: '#blog' },
-  { label: 'Contact', href: '#appointment' },
+  { label: 'Home', href: '' },
+  { label: 'About', href: '/about' },
+  { label: 'Departments', href: '' },
+  { label: 'Doctors', href: '' },
+  { label: 'Pricing', href: '' },
+  { label: 'Blog', href: '' },
+  { label: 'Contact', href: '' },
 ]
 
 export const HERO = {

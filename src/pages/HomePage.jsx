@@ -1,4 +1,4 @@
-import {Hero,About,Services,Why,Departments,Appointment,Pricing,VideoSection,Testimonials,Doctors,FAQ,Blog,CTA} from '../sections/HomePage/index.js'
+import {Hero,About,Services,Why,Departments,Appointment,Pricing,VideoSection,Testimonials,Doctors,FAQ,Blog,CTA} from '../sections/Home_page/index.js'
 
 function HomePage() {
   return (

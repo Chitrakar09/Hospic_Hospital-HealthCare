@@ -1,13 +1,12 @@
 import {Header,Footer} from './components/index.js'
-import {HomePage,AboutPage} from './pages/index.js'
+import { Outlet } from 'react-router'
 
 export default function App() {
   return (
     <>
       <Header />
       <main>
-        <HomePage/>
-        <AboutPage/>
+        <Outlet/>
       </main>
       <Footer />
     </>
