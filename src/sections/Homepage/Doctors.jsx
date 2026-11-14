@@ -39,7 +39,7 @@ function DoctorCard({ doctor, photo }) {
                 </a>
                 <span className="inline-flex items-center gap-[10px]"><Pin width={18} height={18} /> {DOCTORS.address}</span>
               </div>
-              <PrimaryButton className="!pl-4 !gap-4" tabIndex={open ? 0 : -1}>{DOCTORS.cta}</PrimaryButton>
+              {/* <PrimaryButton className="!pl-4 !gap-4" tabIndex={open ? 0 : -1}>{DOCTORS.cta}</PrimaryButton> */}
             </div>
           </div>
         </div>

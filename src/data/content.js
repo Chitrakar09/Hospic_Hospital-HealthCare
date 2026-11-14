@@ -159,7 +159,7 @@ export const CTA = {
 
 export const FOOTER = {
   blurb: 'Quality hospital care with experienced doctors, modern technology and a team that puts patients first.',
-  hours: ['Monday – Friday: 8:00 AM – 7:00 PM', 'Saturday: 9:00 AM – 3:00 PM', 'Emergency: Open 24/7'],
+  hours: ['Sunday - Friday : OPD Open 24 Hours', 'Saturday : OPD Closed (Doctors’ Holiday)', 'Emergency : Open 24/7'],
   contact: ['+977 9857076845', 'hospital@rupandehimodalhospital.com', 'Belbas, Shanti Chowk, Butwal-13'],
-  copyright: '©2026, All Rights Reserved by Dualis',
+  copyright: '© 2026 Rupandehi Model Hospital. Designed & developed by Dualis.',
 }
