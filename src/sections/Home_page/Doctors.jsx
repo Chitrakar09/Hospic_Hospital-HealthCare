@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { A } from '../../data/assets.js'
 import { DOCTORS } from '../../data/content.js'
-import { Section, SectionHeading, PrimaryButton } from '../../components/ui.jsx'
+import { Section, SectionHeading } from '../../components/ui.jsx'
 import { Plus, Minus, Phone, Pin } from '../../components/Icons.jsx'
 
 function DoctorCard({ doctor, photo }) {
@@ -39,7 +39,6 @@ function DoctorCard({ doctor, photo }) {
                 </a>
                 <span className="inline-flex items-center gap-[10px]"><Pin width={18} height={18} /> {DOCTORS.address}</span>
               </div>
-              <PrimaryButton className="!pl-4 !gap-4" tabIndex={open ? 0 : -1}>{DOCTORS.cta}</PrimaryButton>
             </div>
           </div>
         </div>
