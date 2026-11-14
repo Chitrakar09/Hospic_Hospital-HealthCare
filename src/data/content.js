@@ -1,21 +1,21 @@
 // All hospital copy lives here. Edit text without touching components.
-export const BRAND = 'Hospic'
+export const BRAND = 'Rupandehi Model Hospital'
 
 export const NAV = [
   { label: 'Home', href: '' },
   { label: 'About', href: '/about' },
   { label: 'Departments', href: '' },
   { label: 'Doctors', href: '' },
-  { label: 'Pricing', href: '' },
+  //{ label: 'Pricing', href: '' },
   { label: 'Blog', href: '' },
   { label: 'Contact', href: '' },
 ]
 
 export const HERO = {
-  title: 'Compassionate hospital care you can trust',
-  text: 'Expert doctors, modern facilities and 24/7 emergency support, all under one roof.',
-  social: '10,000+ patients treated every year',
-  rating: '4.9 (500+ REVIEWS)',
+  title: 'Better care for a healthier life.',
+  text: 'Modern, reliable care backed by experienced doctors and precision diagnostics.',
+  // social: '10,000+ patients treated every year',
+  // rating: '4.9 (500+ REVIEWS)',
   cta: 'Book an appointment',
   card: 'Book Appointment',
 }
@@ -160,6 +160,6 @@ export const CTA = {
 export const FOOTER = {
   blurb: 'Quality hospital care with experienced doctors, modern technology and a team that puts patients first.',
   hours: ['Monday – Friday: 8:00 AM – 7:00 PM', 'Saturday: 9:00 AM – 3:00 PM', 'Emergency: Open 24/7'],
-  contact: ['+1 (800) 555-0123', 'hello@hospic.com', '2450 Market Street, New York, NY 10001'],
-  copyright: '©2026, All Rights Reserved by Hospic',
+  contact: ['+977 9857076845', 'hospital@rupandehimodalhospital.com', 'Belbas, Shanti Chowk, Butwal-13'],
+  copyright: '©2026, All Rights Reserved by Dualis',
 }
