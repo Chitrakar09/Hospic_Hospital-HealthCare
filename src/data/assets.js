@@ -1,7 +1,7 @@
 // Images and video come from the Framer template's CDN (same assets the template uses).
 // To use your own, replace a value with a URL or a file in /public (e.g. '/images/hero.jpg').
 const img = (id) => `https://framerusercontent.com/images/${id}`
-import profile from "./images/profile.jpg";
+import profile from "../assets/images/profile.jpg";
 
 export const A = {
   hero: profile,

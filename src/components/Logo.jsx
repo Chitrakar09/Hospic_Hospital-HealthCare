@@ -1,5 +1,5 @@
 import { BRAND } from '../data/content.js'
-import logoImg from '../data/images/logo.png'
+import logoImg from '../assets/images/logo.png'
 
 export default function Logo({ light = true }) {
   return (
