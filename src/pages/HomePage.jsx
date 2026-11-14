@@ -8,13 +8,10 @@ function HomePage() {
       <Services />
       <Why />
       <Departments />
-      <Appointment />
-      <Pricing />
-      <VideoSection />
-      <Testimonials />
       <Doctors />
-      <FAQ />
-      <Blog />
+      <Appointment />
+      {/* <FAQ /> */}
+      {/* <Blog /> */}
       <CTA />
     </>
   );

@@ -1,7 +1,6 @@
 import { A } from '../../data/assets.js'
 import { HERO } from '../../data/content.js'
 import { PrimaryButton, Img } from '../../components/ui.jsx'
-import { Star } from '../../components/Icons.jsx'
 
 export default function Hero() {
   return (
@@ -12,33 +11,12 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/75 to-dark/20 desktop:hidden" aria-hidden="true" />
 
       <div className="relative mx-auto flex w-full max-w-container flex-col gap-12 desktop:flex-row desktop:items-end desktop:justify-between">
-        <div className="flex flex-col gap-[60px] desktop:gap-[130px]">
-          <div className="flex max-w-[651px] flex-col items-start gap-10">
-            <div className="flex flex-col items-start gap-6">
-              <div className="flex items-center gap-[10px]">
-                <div className="flex -space-x-3">
-                  {A.avatars.map((src, i) => (
-                    <Img key={i} src={src} alt="" className="h-[50px] w-[50px] rounded-full border-2 border-dark" />
-                  ))}
-                </div>
-                <span className="t-highlight text-white">{HERO.social}</span>
-              </div>
-              <div className="flex flex-col gap-5">
-                <h1 className="t-h1 text-white">{HERO.title}</h1>
-                <p className="max-w-[520px] text-body-dark">{HERO.text}</p>
-              </div>
-            </div>
-            <PrimaryButton>{HERO.cta}</PrimaryButton>
+        <div className="flex max-w-[651px] flex-col items-start gap-10">
+          <div className="flex flex-col gap-5">
+            <h1 className="t-h1 text-white">{HERO.title}</h1>
+            <p className="max-w-[520px] text-body-dark">{HERO.text}</p>
           </div>
-
-          <div className="flex flex-col items-start gap-4">
-            <div className="flex items-center gap-[10px]">
-              <div className="flex gap-1 text-[#FFB020]" aria-hidden="true">
-                {Array.from({ length: 5 }).map((_, i) => <Star key={i} />)}
-              </div>
-              <span className="t-highlight text-white">{HERO.rating}</span>
-            </div>
-          </div>
+          <PrimaryButton>{HERO.cta}</PrimaryButton>
         </div>
 
         {/* Appointment card (glass) */}

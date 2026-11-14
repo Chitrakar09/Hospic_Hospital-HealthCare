@@ -7,7 +7,7 @@ export default function App() {
       <Header />
       <main>
         <HomePage/>
-        <AboutPage/>
+        {/* <AboutPage/> */}
       </main>
       <Footer />
     </>
