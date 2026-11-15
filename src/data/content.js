@@ -8,7 +8,7 @@ export const NAV = [
   // { label: 'Doctors', href: '' },
   //{ label: 'Pricing', href: '' },
   { label: 'Blog', href: '' },
-  { label: 'Contact', href: '' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export const HERO = {
