@@ -38,7 +38,7 @@ function Stat({ to, suffix, label }) {
 export default function About() {
   return (
     <Section id="about" bg="light" innerClassName="flex flex-col gap-[60px] desktop:gap-[100px]">
-      <div className="flex flex-col gap-8 desktop:flex-row desktop:justify-between">
+      <div className="flex flex-col items-start gap-8 desktop:flex-row desktop:items-start desktop:justify-between">
         <Tag>{ABOUT.tag}</Tag>
         <div className="flex max-w-[745px] flex-col items-start gap-10 desktop:gap-[60px]">
           <p className="t-h4 text-dark">{ABOUT.text}</p>

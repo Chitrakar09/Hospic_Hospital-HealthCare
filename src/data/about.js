@@ -1,8 +1,9 @@
 // Content + images for the About page. Images come from the Framer template CDN (swap freely).
 const img = (id) => `https://framerusercontent.com/images/${id}`
+import profile from "../assets/images/profile.png";
 
 export const ABOUT_IMG = {
-  hero: img('R8kXZixUvsezfenja4dB4GodOE.png'),
+  hero: profile,
   team: img('uP3NGPgglkJjd1KZB48FChkZEA.png'),
   surgeon: img('WfU1qcSsij9N7jDvQEfLBJEcu5k.png'),
   gallery: [
@@ -18,14 +19,14 @@ export const ABOUT_PAGE = {
   documentTitle: 'About us – Hospic',
   hero: {
     title: 'About us',
-    text: 'Equipped with advanced medical technology and modern facilities, we offer comprehensive healthcare services across every specialty.',
+    text: 'We are committed to delivering exceptional healthcare through experienced professionals, modern facilities, and compassionate care for every patient.',
   },
   intro: {
     tag: 'About us',
     title: 'Excellence in every patient journey',
-    text: 'At Hospic Hospital, we are dedicated to delivering exceptional medical care with compassion, integrity, and excellence.',
+    text: 'At Rupandehi Model Hospital, we are dedicated to delivering exceptional medical care with compassion, integrity, and excellence.',
     cards: [
-      { title: 'Our mission', text: 'To provide compassionate, high-quality healthcare through skilled professionals and modern technology.' },
+      { title: 'Our mission', text: 'To provide compassionate, high quality healthcare through skilled professionals and modern technology.' },
       { title: 'Our vision', text: 'To become a leading healthcare provider recognized for clinical excellence and patient trust.' },
     ],
     stats: [
