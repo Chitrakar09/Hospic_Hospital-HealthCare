@@ -17,7 +17,7 @@ export default function AboutPage() {
       <HowItWorks />
       <Gallery />
       <Doctors />
-      <CTA />
+      {/* <CTA /> */}
     </>
   )
 }

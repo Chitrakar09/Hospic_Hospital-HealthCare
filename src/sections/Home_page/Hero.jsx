@@ -1,30 +1,29 @@
-import { A } from "../../data/assets.js";
 import { HERO } from "../../data/content.js";
+import { ABOUT_IMG } from "../../data/about.js";
 import { PrimaryButton } from "../../components/ui.jsx";
 
 export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-screen items-center overflow-hidden bg-dark px-5 pt-[140px] pb-[60px] tablet:px-[30px] tablet:pt-[160px] tablet:pb-20 desktop:pt-[200px]"
+      className="relative flex h-dvh items-center overflow-hidden bg-dark px-5 pt-[140px] pb-20 tablet:px-[30px] tablet:pt-[180px] tablet:pb-[100px] desktop:pt-[220px] desktop:pb-[145px]"
     >
-      {/* Hero background photo (already has the navy fade on the left) */}
       <img
-        src={A.hero}
+        src={ABOUT_IMG.hero}
         alt=""
-        className="absolute inset-0 h-full w-full object-cover object-[70%_center] opacity-100"
+        className="absolute inset-0 h-full w-full object-cover"
       />
-      {/* Extra scrim below desktop so text stays readable over the photo */}
+
       <div
-        className="absolute inset-0 bg-gradient-to-r from-dark via-dark/80 to-dark/30"
+        className="absolute inset-y-0 left-0 w-[331px] bg-[linear-gradient(90deg,#1E293B_12%,rgba(30,41,59,0.4)_100%)] tablet:bg-[linear-gradient(90deg,#1E293B_12%,rgba(30,41,59,0.05)_100%)]"
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto flex w-full max-w-container flex-col gap-12 desktop:flex-row desktop:items-end desktop:justify-between">
+      <div className="relative mx-auto w-full max-w-container">
         <div className="flex max-w-[651px] flex-col items-start gap-10">
           <div className="flex flex-col gap-5">
             <h1 className="t-h1 text-white">{HERO.title}</h1>
-            <p className="max-w-[520px] text-body-dark">{HERO.text}</p>
+            <p className="max-w-[488px] text-body-dark">{HERO.text}</p>
           </div>
           <PrimaryButton>{HERO.cta}</PrimaryButton>
         </div>

@@ -11,9 +11,6 @@ function HomePage() {
       <Doctors />
       <Blog/>
       <Appointment />
-      {/* <FAQ /> */}
-      {/* <Blog /> */}
-      <CTA />
     </>
   );
 }

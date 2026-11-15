@@ -4,7 +4,7 @@ import { ABOUT_IMG, ABOUT_PAGE } from '../../data/about.js'
 export default function AboutHero() {
   const { title, text } = ABOUT_PAGE.hero
   return (
-    <section className="relative overflow-hidden bg-dark px-5 pt-[140px] pb-20 tablet:px-[30px] tablet:pt-[180px] tablet:pb-[100px] desktop:pt-[310px] desktop:pb-[235px]">
+    <section className="relative flex min-h-dvh items-center overflow-hidden bg-dark px-5 pt-[140px] pb-20 tablet:px-[30px] tablet:pt-[180px] tablet:pb-[100px] desktop:pt-[310px] desktop:pb-[235px]">
       <img src={ABOUT_IMG.hero} alt="" className="absolute inset-0 h-full w-full object-cover" />
       <div
         className="absolute inset-y-0 left-0 w-[331px] bg-[linear-gradient(90deg,#1E293B_12%,rgba(30,41,59,0.4)_100%)] tablet:bg-[linear-gradient(90deg,#1E293B_12%,rgba(30,41,59,0.05)_100%)]"

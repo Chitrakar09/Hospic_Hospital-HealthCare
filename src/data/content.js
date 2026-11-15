@@ -5,15 +5,15 @@ export const NAV = [
   { label: 'Home', href: '' },
   { label: 'About', href: '/about' },
   { label: 'Departments', href: '' },
-  { label: 'Doctors', href: '' },
+  // { label: 'Doctors', href: '' },
   //{ label: 'Pricing', href: '' },
   { label: 'Blog', href: '' },
   { label: 'Contact', href: '' },
 ]
 
 export const HERO = {
-  title: 'Better care for a healthier life.',
-  text: 'Modern, reliable care backed by experienced doctors and precision diagnostics.',
+  title: 'Better care for healthier life.',
+  text: 'Expert care you can trust.',
   // social: '10,000+ patients treated every year',
   // rating: '4.9 (500+ REVIEWS)',
   cta: 'Book an appointment',
@@ -22,7 +22,7 @@ export const HERO = {
 
 export const ABOUT = {
   tag: 'About us',
-  text: 'We are committed to delivering exceptional medical care through skilled professionals, modern facilities and compassionate service for every patient.',
+  text: 'We are committed to delivering exceptional healthcare through experienced professionals, modern facilities, and compassionate care for every patient.',
   cta: 'About us',
   stats: [
     { to: 200, suffix: '+', label: 'Experienced doctors' },
