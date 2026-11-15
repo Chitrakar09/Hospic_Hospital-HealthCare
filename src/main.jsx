@@ -2,7 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import { HomePage, AboutPage } from "./pages/index.js";
+import { HomePage, AboutPage, ContactPage} from "./pages/index.js";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -15,6 +15,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<App />}>
       <Route path="" element={<HomePage />} />
       <Route path="about" element={<AboutPage />}/>
+      <Route path="contact" element={<ContactPage/>}/>
     </Route>,
   ),
 );

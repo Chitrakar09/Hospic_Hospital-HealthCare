@@ -1,4 +1,5 @@
 import { ArrowUpRight, HealthCross } from './Icons.jsx'
+import { Link } from 'react-router'
 
 /** Section wrapper: Framer section padding 120/80/60 vertical, 30/30/20 horizontal, 1200px inner container. */
 export function Section({ id, bg = 'white', top = true, className = '', innerClassName = '', children }) {
@@ -41,14 +42,26 @@ export function SectionHeading({ tag, title, align = 'left', dark = false, class
  * variant "primary": Primary bg, white text, white icon square (dark arrow)
  * variant "outline": transparent bg, 1px stroke, body text, Primary icon square (white arrow)
  */
-export function PrimaryButton({ children, href = '', variant = 'primary', as = 'a', className = '', ...rest }) {
-  const Comp = as
+export function PrimaryButton({
+  children,
+  href = '/contact',
+  variant = 'primary',
+  as: Comp = Link,
+  className = '',
+  ...rest
+}) {
   const styles =
     variant === 'outline'
       ? 'border border-stroke bg-transparent text-body'
       : 'bg-primary text-white'
-  const iconStyles = variant === 'outline' ? 'bg-primary text-white' : 'bg-white text-dark'
-  const props = as === 'a' ? { href } : {}
+
+  const iconStyles =
+    variant === 'outline'
+      ? 'bg-primary text-white'
+      : 'bg-white text-dark'
+
+  const props = Comp === 'a' ? { href } : { to: href }
+
   return (
     <Comp
       {...props}
@@ -56,6 +69,7 @@ export function PrimaryButton({ children, href = '', variant = 'primary', as = '
       className={`group inline-flex w-fit items-center justify-center gap-[26px] py-[13px] pr-[13px] pl-[22px] transition-opacity hover:opacity-90 ${styles} ${className}`}
     >
       <span className="t-button">{children}</span>
+
       <span className={`grid h-10 w-10 place-items-center ${iconStyles}`}>
         <ArrowUpRight className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
       </span>

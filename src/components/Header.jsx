@@ -7,9 +7,12 @@ import { NavLink } from 'react-router'
 export default function Header() {
   const [open, setOpen] = useState(false)
   return (
+    // header starts
     <header className="absolute inset-x-0 top-0 z-20 px-5 tablet:px-[30px]">
+      {/* nav starts */}
       <div className="mx-auto flex h-[88px] w-full max-w-container items-center justify-between desktop:h-[110px]">
         <Logo />
+        {/* navigation bar */}
         <nav aria-label="Main" className="hidden items-center gap-9 desktop:flex">
           {NAV.map((n) => (
             <NavLink key={n.label} to={n.href} className="t-highlight text-white/90 transition-colors hover:text-white">
@@ -17,9 +20,11 @@ export default function Header() {
             </NavLink>
           ))}
         </nav>
+        {/* book an appointment cta */}
         <div className="hidden desktop:block">
           <PrimaryButton>{HERO.cta}</PrimaryButton>
         </div>
+        {/* navigation for mobile devices */}
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
@@ -38,6 +43,7 @@ export default function Header() {
               {n.label}
             </a>
           ))}
+          {/* book an appointment cta for mobile */}
           <div className="pt-5">
             <PrimaryButton>{HERO.cta}</PrimaryButton>
           </div>
