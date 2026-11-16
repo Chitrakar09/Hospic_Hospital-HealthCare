@@ -15,14 +15,14 @@ export default function Appointment() {
 
         <form aria-labelledby="appointment-title" className={FORM_GRID}>
           <Field tone="dark" label="Full Name *" id="appointment-name">
-            <TextInput tone="dark" id="appointment-name" required autoComplete="name" placeholder="Michael Scott" />
+            <TextInput tone="dark" id="appointment-name" required autoComplete="name" placeholder="Enter Your Full Name ..." />
           </Field>
           <Field tone="dark" label="Email Address *" id="appointment-email">
-            <TextInput tone="dark" id="appointment-email" type="email" required autoComplete="email" placeholder="info@hospic.com" />
+            <TextInput tone="dark" id="appointment-email" type="email" required autoComplete="email" placeholder="Enter Your Email ..." />
           </Field>
 
           <Field tone="dark" label="Phone Number *" id="appointment-phone">
-            <TextInput tone="dark" id="appointment-phone" type="tel" required autoComplete="tel" placeholder="+1 (212) 555-0100" />
+            <TextInput tone="dark" id="appointment-phone" type="tel" required autoComplete="tel" placeholder="Enter Your Phone Number ..." />
           </Field>
           <Field tone="dark" label="Department *" id="appointment-department">
             <SelectInput tone="dark" id="appointment-department" required options={APPOINTMENT.options} />
@@ -32,7 +32,7 @@ export default function Appointment() {
             <TextInput tone="dark" id="appointment-date" type="date" required />
           </Field>
           <Field tone="dark" label="Doctor Name *" id="appointment-doctor">
-            <TextInput tone="dark" id="appointment-doctor" required placeholder="James Carter" />
+            <TextInput tone="dark" id="appointment-doctor" required placeholder="Enter Preferred Doctor Name ..." />
           </Field>
 
           <Field tone="dark" label="Message *" id="appointment-message" className="tablet:col-span-2">

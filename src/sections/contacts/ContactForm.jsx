@@ -12,18 +12,18 @@ export default function ContactForm() {
 
       <form className={`${FORM_GRID} max-w-[970px]`}>
         <Field label="Full Name *" id="contact-name">
-          <TextInput id="contact-name" required autoComplete="name" placeholder="Michael Scott" />
+          <TextInput id="contact-name" required autoComplete="name" placeholder="Enter Your Name ..." />
         </Field>
         <Field label="Email Address *" id="contact-email">
-          <TextInput id="contact-email" type="email" required autoComplete="email" placeholder="info@hospic.com" />
+          <TextInput id="contact-email" type="email" required autoComplete="email" placeholder="Enter Your Email ..." />
         </Field>
 
         <Field label="Subject *" id="contact-subject" className="tablet:col-span-2">
-          <TextInput id="contact-subject" required placeholder="How can we help you?" />
+          <TextInput id="contact-subject" required placeholder="How can we help you ?" />
         </Field>
 
         <Field label="Message *" id="contact-message" className="tablet:col-span-2">
-          <TextArea id="contact-message" required placeholder="Write your message…" />
+          <TextArea id="contact-message" required placeholder="Enter Your Message ..." />
         </Field>
 
         <div className="tablet:col-span-2">
