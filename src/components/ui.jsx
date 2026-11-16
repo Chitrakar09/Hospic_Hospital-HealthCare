@@ -50,6 +50,7 @@ export function PrimaryButton({
   className = '',
   ...rest
 }) {
+  console.log(Comp)
   const styles =
     variant === 'outline'
       ? 'border border-stroke bg-transparent text-body'
@@ -66,12 +67,12 @@ export function PrimaryButton({
     <Comp
       {...props}
       {...rest}
-      className={`group inline-flex w-fit items-center justify-center gap-[26px] py-[13px] pr-[13px] pl-[22px] transition-opacity hover:opacity-90 ${styles} ${className}`}
+      className={`group inline-flex w-fit items-center justify-center gap-[26px] py-[13px] pr-[13px] pl-[22px] transition-opacity hover:opacity-90 ${styles} ${className} rounded-full`}
     >
       <span className="t-button">{children}</span>
 
-      <span className={`grid h-10 w-10 place-items-center ${iconStyles}`}>
-        <ArrowUpRight className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+      <span className={`grid h-10 w-10 place-items-center rounded-full ${iconStyles}`}>
+        <ArrowUpRight />
       </span>
     </Comp>
   )

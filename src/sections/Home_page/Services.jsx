@@ -22,7 +22,7 @@ export default function Services() {
     <Section id="services" innerClassName="flex flex-col justify-between gap-[60px] desktop:flex-row desktop:gap-[100px]">
       <div className="flex max-w-[470px] flex-col items-start gap-10 desktop:gap-[60px] desktop:pr-10">
         <SectionHeading tag={SERVICES.tag} title={SERVICES.title} />
-        <PrimaryButton variant="outline">{SERVICES.cta}</PrimaryButton>
+        <PrimaryButton as={'a'} href="#appointment" variant="outline">{SERVICES.cta}</PrimaryButton>
       </div>
       <div className="flex w-full max-w-[640px] flex-col gap-5">
         {SERVICES.items.map((s, i) => (

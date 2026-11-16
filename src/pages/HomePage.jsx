@@ -9,7 +9,7 @@ function HomePage() {
       <Why />
       <Departments />
       <Doctors />
-      <Blog/>
+      {/* <Blog/> */}
       <Appointment />
     </>
   );

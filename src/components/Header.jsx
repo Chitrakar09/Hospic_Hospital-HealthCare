@@ -3,7 +3,7 @@ import { NAV, HERO } from '../data/content.js'
 import Logo from './Logo.jsx'
 import { PrimaryButton } from './ui.jsx'
 import { Menu, Close } from './Icons.jsx'
-import { NavLink } from 'react-router'
+import { NavLink,Link } from 'react-router'
 export default function Header() {
   const [open, setOpen] = useState(false)
   return (
@@ -20,10 +20,6 @@ export default function Header() {
             </NavLink>
           ))}
         </nav>
-        {/* book an appointment cta */}
-        <div className="hidden desktop:block">
-          <PrimaryButton>{HERO.cta}</PrimaryButton>
-        </div>
         {/* navigation for mobile devices */}
         <button
           type="button"
@@ -31,17 +27,17 @@ export default function Header() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? 'Close menu' : 'Open menu'}
-          className="grid h-11 w-11 place-items-center border border-stroke-dark text-white desktop:hidden"
+          className="grid h-11 w-11 place-items-center text-white desktop:hidden"
         >
           {open ? <Close /> : <Menu />}
         </button>
       </div>
       {open && (
-        <nav id="mobile-menu" aria-label="Mobile" className="mx-auto flex w-full max-w-container flex-col gap-1 bg-dark p-5 desktop:hidden">
+        <nav id="mobile-menu" aria-label="Mobile" className="mx-auto flex w-full max-w-container flex-col gap-1 bg-dark p-5 desktop:hidden border border-stroke-dark rounded-lg">
           {NAV.map((n) => (
-            <a key={n.label} href={""} onClick={() => setOpen(false)} className="t-h6 border-b border-stroke-dark py-4 text-white">
+            <Link key={n.label} to={n.href} onClick={() => setOpen(false)} className="t-h6 border-b border-stroke-dark py-4 text-white">
               {n.label}
-            </a>
+            </Link>
           ))}
           {/* book an appointment cta for mobile */}
           <div className="pt-5">

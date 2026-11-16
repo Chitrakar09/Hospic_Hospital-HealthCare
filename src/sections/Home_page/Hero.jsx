@@ -25,7 +25,7 @@ export default function Hero() {
             <h1 className="t-h1 text-white">{HERO.title}</h1>
             <p className="max-w-[488px] text-body-dark">{HERO.text}</p>
           </div>
-          <PrimaryButton>{HERO.cta}</PrimaryButton>
+          <PrimaryButton as={'a'} href="#appointment">{HERO.cta}</PrimaryButton>
         </div>
       </div>
     </section>

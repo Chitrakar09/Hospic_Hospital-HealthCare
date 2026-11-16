@@ -7,7 +7,7 @@ export const NAV = [
   { label: 'Departments', href: '' },
   // { label: 'Doctors', href: '' },
   //{ label: 'Pricing', href: '' },
-  { label: 'Blog', href: '' },
+  { label: 'Notices', href: '' },
   { label: 'Contact', href: '/contact' },
 ]
 
