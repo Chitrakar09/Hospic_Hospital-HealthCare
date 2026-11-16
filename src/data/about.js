@@ -1,6 +1,6 @@
 // Content + images for the About page. Images come from the Framer template CDN (swap freely).
 const img = (id) => `https://framerusercontent.com/images/${id}`
-import profile from "../assets/images/profile.png";
+import profile from "../assets/images/about.jpg";
 
 export const ABOUT_IMG = {
   hero: profile,

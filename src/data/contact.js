@@ -1,8 +1,9 @@
 // Content + images for the Contact page. Image URLs come from the Framer template CDN (swap freely).
 const img = (id) => `https://framerusercontent.com/images/${id}`
+import profile from "../assets/images/contact.png";
 
 export const CONTACT_IMG = {
-  hero: img('cSrL2mUJw2oX462vRVEf8Rm6Md8.png'),
+  hero: profile,
   panelBg: img('ETKoe66BeIkWzq6ZgMWHSfxUkE.png'),
 }
 
@@ -17,16 +18,15 @@ export const CONTACT_PAGE = {
       icon: 'phone',
       title: 'Phone',
       lines: [
-        { text: '+1 (212) 555-0189', href: 'tel:+12125550189' },
-        { text: '+1 (212) 555-0100', href: 'tel:+12125550100' },
+        { text: '071-592174', href: 'tel:+el:+97771592174' },
+        { text: '+977 9857076845', href: 'tel:+9779857076845' },
       ],
     },
     {
       icon: 'mail',
       title: 'Email',
       lines: [
-        { text: 'info@hospic.com', href: 'mailto:info@hospic.com' },
-        { text: 'emergency@hospic.com', href: 'mailto:emergency@hospic.com' },
+        { text: 'hospital@rupandehimodalhospital.com', href: 'https://mail.google.com/mail/?view=cm&fs=1&to=hospital@rupandehimodalhospital.com'},
       ],
     },
     {
@@ -34,8 +34,9 @@ export const CONTACT_PAGE = {
       title: 'Hospital Address',
       lines: [
         {
-          text: '123 Healthcare Avenue New York, NY 10001 United States',
-          href: 'https://www.google.com/maps/search/?api=1&query=123+Healthcare+Avenue+New+York+NY+10001',
+          text: 'Belbas, Shanti Chowk, Butwal',
+          href : 'https://www.google.com/maps/search/?api=1&query=P739%2B52M%2C+Lumbini+Province+32900'
+
         },
       ],
     },

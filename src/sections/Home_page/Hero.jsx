@@ -1,5 +1,5 @@
 import { HERO } from "../../data/content.js";
-import { ABOUT_IMG } from "../../data/about.js";
+import { A } from "../../data/assets.js";
 import { PrimaryButton } from "../../components/ui.jsx";
 
 export default function Hero() {
@@ -9,7 +9,7 @@ export default function Hero() {
       className="relative flex h-dvh items-center overflow-hidden bg-dark px-5 pt-[140px] pb-20 tablet:px-[30px] tablet:pt-[180px] tablet:pb-[100px] desktop:pt-[220px] desktop:pb-[145px]"
     >
       <img
-        src={ABOUT_IMG.hero}
+        src={A.hero}
         alt=""
         className="absolute inset-0 h-full w-full object-cover"
       />
