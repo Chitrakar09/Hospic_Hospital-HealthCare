@@ -50,7 +50,6 @@ export function PrimaryButton({
   className = '',
   ...rest
 }) {
-  console.log(Comp)
   const styles =
     variant === 'outline'
       ? 'border border-stroke bg-transparent text-body'

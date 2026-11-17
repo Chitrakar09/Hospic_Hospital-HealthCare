@@ -8,7 +8,7 @@ function HomePage() {
       <Services />
       <Why />
       <Departments />
-      <Doctors />
+      <Doctors initialCount={3} />
       {/* <Blog/> */}
       <Appointment />
     </>

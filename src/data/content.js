@@ -63,6 +63,7 @@ export const DEPARTMENTS = {
     { title: 'Neurology', text: 'Specialist care for the brain, spine and nervous system disorders.' },
     { title: 'Radiology', text: 'Advanced diagnostic imaging services, including X-ray, MRI and CT.' },
     { title: 'Orthopedics', text: 'Expert care for bones, joints, muscles and sports injuries.' },
+    
   ],
   detailsLabel: 'View details',
 }

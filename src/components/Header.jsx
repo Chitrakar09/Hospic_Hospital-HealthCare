@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { NAV, HERO } from '../data/content.js'
+import { NAV, HERO, BLOG } from '../data/content.js'
 import Logo from './Logo.jsx'
 import { PrimaryButton } from './ui.jsx'
-import { Menu, Close } from './Icons.jsx'
+import { Menu, Close, NewsNoticeBellActive, NewsNoticeBellInactive, } from './Icons.jsx'
 import { NavLink,Link } from 'react-router'
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -15,11 +15,19 @@ export default function Header() {
         {/* navigation bar */}
         <nav aria-label="Main" className="hidden items-center gap-9 desktop:flex">
           {NAV.map((n) => (
-            <NavLink key={n.label} to={n.href} className="t-highlight text-white/90 transition-colors hover:text-white">
+           n.label!=='Notices'? <NavLink key={n.label} to={n.href} className="t-highlight text-white/90 transition-colors hover:text-white">
               {n.label}
-            </NavLink>
+            </NavLink>:null
           ))}
         </nav>
+        {/* notices */}
+        <nav aria-label="Main" className="hidden items-center gap-9 desktop:flex">
+        {NAV.map((n) => (
+           n.label==='Notices'? <NavLink key={n.label} to={n.href} className="grid items-start mt-3 h-10 w-10 place-items-center text-white/90 transition-colors hover:text-white">
+            {BLOG.items.length>0?<NewsNoticeBellActive/>:<NewsNoticeBellInactive/>}
+            </NavLink>:null
+          ))}
+          </nav>
         {/* navigation for mobile devices */}
         <button
           type="button"
