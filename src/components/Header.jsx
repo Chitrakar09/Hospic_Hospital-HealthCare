@@ -1,12 +1,20 @@
-import { useState } from 'react'
-import { NAV, HERO, BLOG } from '../data/content.js'
-import Logo from './Logo.jsx'
-import { PrimaryButton } from './ui.jsx'
-import { Menu, Close, NewsNoticeBellActive, NewsNoticeBellInactive } from './Icons.jsx'
-import { NavLink, Link } from 'react-router'
+import { useState } from "react";
+import { NAV, HERO, BLOG } from "../data/content.js";
+import Logo from "./Logo.jsx";
+import { PrimaryButton } from "./ui.jsx";
+import {
+  Menu,
+  Close,
+  NewsNoticeBellActive,
+  NewsNoticeBellInactive,
+} from "./Icons.jsx";
+import { NavLink, Link } from "react-router";
+import { DepartmentsMegaMenu } from "./index.js";
 
+// NAV entry that opens the mega menu (desktop) / accordion (phone + tablet).
+const MEGA_MENU_LABEL = "Departments";
 export default function Header() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     // header starts
@@ -16,29 +24,39 @@ export default function Header() {
         <Logo />
 
         {/* navigation bar */}
-        <nav aria-label="Main" className="hidden items-center gap-9 desktop:flex">
+        <nav
+          aria-label="Main"
+          className="hidden items-center gap-9 desktop:flex"
+        >
           {NAV.map((n) =>
-            n.label !== 'Notices' ? (
-              <NavLink
-                key={n.label}
-                to={n.href}
-                className="t-highlight text-white/90 transition-colors hover:text-white"
-              >
-                {n.label}
-              </NavLink>
-            ) : null
+            n.label !== "Notices" ? (
+              n.label === MEGA_MENU_LABEL ? (
+                <DepartmentsMegaMenu key={n.label} label={n.label}/>
+              ) : (
+                <NavLink
+                  key={n.label}
+                  to={n.href}
+                  className="t-highlight text-white/90 transition-colors hover:text-white"
+                >
+                  {n.label}
+                </NavLink>
+              )
+            ) : null,
           )}
         </nav>
 
         {/* notices */}
-        <nav aria-label="Notices" className="hidden items-center gap-9 desktop:flex">
+        <nav
+          aria-label="Notices"
+          className="hidden items-center gap-9 desktop:flex"
+        >
           {NAV.map((n) =>
-            n.label === 'Notices' ? (
+            n.label === "Notices" ? (
               <NavLink
                 key={n.label}
                 to={n.href}
                 aria-label="NOTICE"
-                className="group relative mt-3 grid h-15 w-15 place-items-center text-white/90 transition-colors hover:text-white [&>svg]:h-7 [&>svg]:w-7 [&>svg]:fill-white"
+                className="group relative grid h-15 w-15 place-items-center text-white/90 transition-colors hover:text-white [&>svg]:h-7 [&>svg]:w-7 [&>svg]:fill-white"
               >
                 {BLOG.items.length > 0 ? (
                   <NewsNoticeBellActive className="h-7 w-7 fill-white text-white" />
@@ -51,7 +69,7 @@ export default function Header() {
                   NOTICE
                 </span>
               </NavLink>
-            ) : null
+            ) : null,
           )}
         </nav>
 
@@ -61,7 +79,7 @@ export default function Header() {
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-controls="mobile-menu"
-          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-label={open ? "Close menu" : "Open menu"}
           className="grid h-11 w-11 place-items-center text-white desktop:hidden"
         >
           {open ? <Close /> : <Menu />}
@@ -91,5 +109,5 @@ export default function Header() {
         </nav>
       )}
     </header>
-  )
+  );
 }
