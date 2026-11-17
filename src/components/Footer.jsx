@@ -22,7 +22,7 @@ export default function Footer() {
           {FOOTER.contact.map((c) => <p key={c}>{c}</p>)}
         </div>
       </div>
-      <div className="mx-auto mt-12 w-full max-w-container border-t border-stroke-dark pt-6">
+      <div className="mx-auto mt-12 w-full max-w-container border-t border-stroke-dark pt-6 text-center">
         <p>{FOOTER.copyright}</p>
       </div>
     </footer>
