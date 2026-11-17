@@ -64,6 +64,7 @@ export const DEPARTMENTS = {
     { title: 'Radiology', text: 'Advanced diagnostic imaging services, including X-ray, MRI and CT.' },
     { title: 'Orthopedics', text: 'Expert care for bones, joints, muscles and sports injuries.' },
     
+    
   ],
   detailsLabel: 'View details',
 }

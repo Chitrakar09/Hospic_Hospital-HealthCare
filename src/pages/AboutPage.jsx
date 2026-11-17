@@ -16,7 +16,7 @@ export default function AboutPage() {
       <AboutIntro />
       <HowItWorks />
       <Gallery />
-      <Doctors />
+      <Doctors initialCount={3}/>
       {/* <CTA /> */}
     </>
   )

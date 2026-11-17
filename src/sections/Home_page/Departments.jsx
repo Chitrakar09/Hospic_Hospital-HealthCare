@@ -19,10 +19,7 @@ function DepartmentCard({ title, text, photo, icon }) {
             <h3 className="t-h5 text-dark">{title}</h3>
             <p>{text}</p>
           </div>
-          <a href="#appointment" className="t-button inline-flex w-fit items-center gap-1 text-dark hover:text-primary">
-            {DEPARTMENTS.detailsLabel}
-            <ArrowUpRight width={20} height={20} />
-          </a>
+      
         </div>
       </div>
     </article>
