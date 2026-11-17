@@ -90,21 +90,29 @@ export default function Header() {
         <nav
           id="mobile-menu"
           aria-label="Mobile"
-          className="mx-auto flex w-full max-w-container flex-col gap-1 rounded-lg border border-stroke-dark bg-dark p-5 desktop:hidden"
+          className="mx-auto flex w-full max-w-container flex-col gap-1 rounded-xl border border-stroke-dark bg-white p-5 desktop:hidden"
         >
           {NAV.map((n) => (
+            n.label==="Departments"? (<a
+              key={n.label}
+              href={n.href}
+              onClick={() => setOpen(false)}
+              className="w-full t-h6 border-b text-center border-dark py-4 text-dark"
+            >
+              {n.label}
+            </a>):
             <Link
               key={n.label}
               to={n.href}
               onClick={() => setOpen(false)}
-              className="t-h6 border-b border-stroke-dark py-4 text-white"
+              className="w-full t-h6 border-b text-center border-dark py-4 text-dark"
             >
               {n.label}
             </Link>
           ))}
           {/* book an appointment cta for mobile */}
-          <div className="pt-5">
-            <PrimaryButton>{HERO.cta}</PrimaryButton>
+          <div className="pt-5 flex justify-center">
+            <PrimaryButton as={"a"} href="#appointment">{HERO.cta}</PrimaryButton>
           </div>
         </nav>
       )}

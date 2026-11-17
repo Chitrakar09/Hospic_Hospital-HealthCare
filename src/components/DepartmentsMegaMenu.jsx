@@ -115,22 +115,27 @@ const hasMore = DEPARTMENTS.items.length > 6
     setOpen(true);
   };
   const onPointerLeave = (e) => {
-    if (e.pointerType !== "mouse" || pinned.current) return;
-    clearTimer();
-    timer.current = setTimeout(() => setOpen(false), CLOSE_DELAY);
+    if (e.pointerType !== "mouse") return;
+
+  clearTimer();
+
+  timer.current = setTimeout(() => {
+    setOpen(false);
+    setShowAll(false);
+    pinned.current = false;
+  }, CLOSE_DELAY);
   };
 
   const onTriggerClick = (e) => {
-    e.preventDefault();
-    clearTimer();
-    if (!open) {
-      pinned.current = true;
-      setOpen(true);
-    } else if (pinned.current) {
-      close();
-    } else {
-      pinned.current = true; // opened by hover: first click pins it open
-    }
+   e.preventDefault();
+  clearTimer();
+
+  if (open) {
+    close();
+  } else {
+    setOpen(true);
+    pinned.current = false;
+  }
   };
 
   const onBlur = (e) => {
