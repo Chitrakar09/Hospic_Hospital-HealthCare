@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { A } from '../../data/assets.js'
 import { DOCTORS } from '../../data/content.js'
-import { Section, SectionHeading } from '../../components/ui.jsx'
+import { Section, SectionHeading, PrimaryButton } from '../../components/ui.jsx'
 import { Plus, Minus, Phone, Pin } from '../../components/Icons.jsx'
 
 function DoctorCard({ doctor, photo }) {
@@ -47,12 +47,46 @@ function DoctorCard({ doctor, photo }) {
   )
 }
 
-export default function Doctors() {
+const SEE_MORE = 'See More'
+const SEE_LESS = 'See Less'
+
+/**
+ * `initialCount`: how many doctors show before "See More". Omit it to show everyone (no button),
+ * e.g. the About page. The homepage passes `initialCount={3}`.
+ */
+export default function Doctors({ initialCount = Infinity }) {
+  const [expanded, setExpanded] = useState(false)
+  const toggleRef = useRef(null)
+
+  const items = DOCTORS.items
+  const canToggle = items.length > initialCount
+  const visible = canToggle && !expanded ? items.slice(0, initialCount) : items
+
+  const toggle = () => {
+    const collapsing = expanded
+    setExpanded(!expanded)
+    // Keep the button in view when the section gets shorter.
+    if (collapsing) requestAnimationFrame(() => toggleRef.current?.scrollIntoView({ block: 'nearest' }))
+  }
+
   return (
     <Section id="doctors" top={false} innerClassName="flex flex-col items-center gap-[50px] pt-[60px] tablet:pt-20 desktop:gap-20 desktop:pt-[120px]">
       <SectionHeading tag={DOCTORS.tag} title={DOCTORS.title} align="center" className="max-w-[536px]" />
-      <div className="grid w-full grid-cols-1 gap-[30px] tablet:grid-cols-2 desktop:grid-cols-3">
-        {DOCTORS.items.map((d, i) => <DoctorCard key={d.name} doctor={d} photo={A.doctors[i]} />)}
+      <div className="flex w-full flex-col gap-[50px] desktop:gap-[60px]">
+        <div id="doctors-grid" className="grid w-full grid-cols-1 gap-[30px] tablet:grid-cols-2 desktop:grid-cols-3">
+          {visible.map((d, i) => (
+            // Photos live in assets.js by position; cycle them if there are more doctors than photos.
+            <DoctorCard key={d.name} doctor={d} photo={A.doctors[i % A.doctors.length]} />
+          ))}
+        </div>
+
+        {canToggle && (
+          <div ref={toggleRef} className="flex justify-center">
+            <PrimaryButton as="button" type="button" aria-expanded={expanded} aria-controls="doctors-grid" onClick={toggle}>
+              {expanded ? SEE_LESS : SEE_MORE}
+            </PrimaryButton>
+          </div>
+        )}
       </div>
     </Section>
   )

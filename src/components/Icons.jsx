@@ -24,3 +24,38 @@ export const Shield = I(<><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3
 export const Clock = I(<><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3.5 2" /></>)
 
 export const WHY_ICONS = { users: Users, cpu: Cpu, shield: Shield, clock: Clock }
+
+export const NewsNoticeBellInactive = (props) => (
+  <svg {...base} {...props}>
+    {/* Top stem */}
+    <path d="M12 3.5V5" />
+
+    {/* Bell body */}
+    <path d="M12 5C7.8 5 5.5 8.2 5.5 12.5V16c0 1.2-.6 2.3-1.5 3.5h16c-.9-1.2-1.5-2.3-1.5-3.5v-3.5C18.5 8.2 16.2 5 12 5Z" />
+
+    {/* Clapper */}
+    <path d="M10.5 20.5c0 1 .7 1.8 1.5 1.8s1.5-.8 1.5-1.8" />
+  </svg>
+)
+
+export const NewsNoticeBellActive = (props) => (
+  <svg {...base} {...props}>
+    {/* Top stem */}
+    <path d="M12 3.5V5" />
+
+    {/* Bell body */}
+    <path d="M12 5C7.8 5 5.5 8.2 5.5 12.5V16c0 1.2-.6 2.3-1.5 3.5h16c-.9-1.2-1.5-2.3-1.5-3.5v-3.5C18.5 8.2 16.2 5 12 5Z" />
+
+    {/* Clapper */}
+    <path d="M10.5 20.5c0 1 .7 1.8 1.5 1.8s1.5-.8 1.5-1.8" />
+
+    {/* Notification dot */}
+    <circle
+      cx="19"
+      cy="5"
+      r="2.5"
+      fill="#106AD9"
+      stroke="none"
+    />
+  </svg>
+)
