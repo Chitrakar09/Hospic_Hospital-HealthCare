@@ -4,7 +4,7 @@ export const BRAND = 'Rupandehi Model Hospital'
 export const NAV = [
   { label: 'Home', href: '' },
   { label: 'About', href: '/about' },
-  { label: 'Departments', href: '' },
+  { label: 'Departments', href: '#departments' },
   // { label: 'Doctors', href: '' },
   //{ label: 'Pricing', href: '' },
   { label: 'Notices', href: '' },
@@ -63,6 +63,14 @@ export const DEPARTMENTS = {
     { title: 'Neurology', text: 'Specialist care for the brain, spine and nervous system disorders.' },
     { title: 'Radiology', text: 'Advanced diagnostic imaging services, including X-ray, MRI and CT.' },
     { title: 'Orthopedics', text: 'Expert care for bones, joints, muscles and sports injuries.' },
+     { title: 'a', text: 'Expert diagnosis and treatment for heart and cardiovascular conditions.' },
+    { title: 'ab', text: 'Specialist care for the brain, spine and nervous system disorders.' },
+    { title: 'abc', text: 'Advanced diagnostic imaging services, including X-ray, MRI and CT.' },
+    { title: 'abcd', text: 'Expert care for bones, joints, muscles and sports injuries.' },
+     { title: 'abcde', text: 'Expert diagnosis and treatment for heart and cardiovascular conditions.' },
+    { title: 'gf', text: 'Specialist care for the brain, spine and nervous system disorders.' },
+    { title: 'fg', text: 'Advanced diagnostic imaging services, including X-ray, MRI and CT.' },
+    { title: 'hu', text: 'Expert care for bones, joints, muscles and sports injuries.' },
     
     
   ],
