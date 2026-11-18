@@ -2,12 +2,12 @@
 export const BRAND = 'Rupandehi Model Hospital'
 
 export const NAV = [
-  { label: 'Home', href: '' },
+  { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
-  { label: 'Departments', href: '#departments' },
+  { label: 'Departments', href: '/#departments' },
   // { label: 'Doctors', href: '' },
   //{ label: 'Pricing', href: '' },
-  { label: 'Notices', href: '' },
+  { label: 'Notices', href: '/#notices' },
   { label: 'Contact', href: '/contact' },
 ]
 

@@ -53,9 +53,9 @@ export default function Header() {
         >
           {NAV.map((n) =>
             n.label === "Notices" ? (
-              <NavLink
+              <a
                 key={n.label}
-                to={n.href}
+                href={n.href}
                 aria-label="NOTICE"
                 className="group relative grid h-15 w-15 place-items-center text-white/90 transition-colors hover:text-white [&>svg]:h-7 [&>svg]:w-7 [&>svg]:fill-white"
               >
@@ -69,7 +69,7 @@ export default function Header() {
                 <span className="pointer-events-none absolute bottom-full mb-1 whitespace-nowrap rounded border border-stroke-dark bg-dark px-2.5 py-1 text-xs font-semibold tracking-wider text-white opacity-0 shadow-md transition-opacity duration-200 group-hover:opacity-100">
                   NOTICE
                 </span>
-              </NavLink>
+              </a>
             ) : null,
           )}
         </nav>
@@ -94,7 +94,7 @@ export default function Header() {
           className="mx-auto flex w-full max-w-container flex-col gap-1 rounded-xl border border-stroke-dark bg-white p-5 desktop:hidden"
         >
           {NAV.map((n) => (
-            n.label==="Departments"? (<a
+            n.label==="Departments"||n.label==="Notices"? (<a
               key={n.label}
               href={n.href}
               onClick={() => setOpen(false)}
