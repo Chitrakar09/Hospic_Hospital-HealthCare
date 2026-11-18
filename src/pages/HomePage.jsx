@@ -1,4 +1,4 @@
-import {Hero,About,Services,Why,Departments,Appointment,Pricing,VideoSection,Testimonials,Doctors,FAQ,Blog,CTA} from '../sections/Home_page/index.js'
+import {Hero,About,Services,Why,Departments,Appointment,Pricing,VideoSection,Testimonials,Doctors,FAQ,Blog,CTA,Notices} from '../sections/Home_page/index.js'
 
 function HomePage() {
   return (
@@ -9,6 +9,7 @@ function HomePage() {
       <Why />
       <Departments />
       <Doctors initialCount={3} />
+      <Notices/>
       {/* <Blog/> */}
       <Appointment />
     </>

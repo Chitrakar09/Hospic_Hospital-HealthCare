@@ -11,6 +11,7 @@ import Services from './Services.jsx';
 import Testimonials from './Testimonials.jsx';
 import VideoSection from './VideoSection.jsx';
 import Why from './Why.jsx';
+import Notices from './Notices.jsx';
 
 export {
     About,
@@ -25,5 +26,6 @@ export {
     Services,
     Testimonials,
     VideoSection,
-    Why
+    Why,
+    Notices
 }
