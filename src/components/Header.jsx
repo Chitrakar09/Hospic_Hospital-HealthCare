@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NAV, HERO, BLOG } from "../data/content.js";
+import { NOTICES } from "../data/notices.js";
 import Logo from "./Logo.jsx";
 import { PrimaryButton } from "./ui.jsx";
 import {
@@ -58,7 +59,7 @@ export default function Header() {
                 aria-label="NOTICE"
                 className="group relative grid h-15 w-15 place-items-center text-white/90 transition-colors hover:text-white [&>svg]:h-7 [&>svg]:w-7 [&>svg]:fill-white"
               >
-                {BLOG.items.length > 0 ? (
+                {NOTICES.length > 0 ? (
                   <NewsNoticeBellActive className="h-7 w-7 fill-white text-white" />
                 ) : (
                   <NewsNoticeBellInactive className="h-7 w-7 fill-white text-white" />
