@@ -1,4 +1,5 @@
 import { PrimaryButton } from './ui.jsx'
+import { forwardRef } from 'react'
 
 /**
  * Shared, presentation-only form controls (UI only: no state, validation or submit logic).
@@ -36,29 +37,80 @@ export function Field({ label, id, tone = 'light', className = '', children }) {
   )
 }
 
-export function TextInput({ id, tone = 'light', type = 'text', className = '', ...rest }) {
-  const t = TONES[tone]
-  return <input id={id} name={id} type={type} className={`${base} ${t.control} ${t.scheme} rounded-full ${className}`} {...rest} />
-}
+export const TextInput = forwardRef(
+  ({ id, tone = 'light', type = 'text', className = '', ...rest }, ref) => {
+    const t = TONES[tone]
 
-export function SelectInput({ id, tone = 'light', options = [], placeholder = 'Select…', className = '', ...rest }) {
-  const t = TONES[tone]
-  return (
-    <div className="relative w-full">
-      <select id={id} name={id} defaultValue="" className={`${base} ${t.control} ${t.invalid} appearance-none rounded-full pr-12 ${className}`} {...rest}>
-        <option value="" disabled className="text-dark">{placeholder}</option>
-        {options.map((o) => <option key={o} value={o} className="text-dark">{o}</option>)}
-      </select>
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className={`pointer-events-none absolute top-1/2 right-5 -translate-y-1/2 ${t.chevron}`}>
-        <path d="m6 9 6 6 6-6" />
-      </svg>
-    </div>
-  )
-}
+    return (
+      <input
+        ref={ref}
+        id={id}
+        name={id}
+        type={type}
+        className={`${base} ${t.control} ${t.scheme} rounded-full ${className}`}
+        {...rest}
+      />
+    )
+  }
+)
 
-export function TextArea({ id, tone = 'light', className = '', ...rest }) {
-  return <textarea id={id} name={id} className={`${base} ${TONES[tone].control} min-h-[140px] resize-y rounded-[10px] ${className}`} {...rest} />
-}
+export const SelectInput = forwardRef(
+  ({ id, tone = 'light', options = [], placeholder = 'Select…', className = '', ...rest }, ref) => {
+    const t = TONES[tone]
+
+    return (
+      <div className="relative w-full">
+        <select
+          ref={ref}
+          id={id}
+          name={id}
+          defaultValue=""
+          className={`${base} ${t.control} ${t.invalid} appearance-none rounded-full pr-12 ${className}`}
+          {...rest}
+        >
+          <option value="" disabled className="text-dark">
+            {placeholder}
+          </option>
+
+          {options.map((o) => (
+            <option key={o} value={o} className="text-dark">
+              {o}
+            </option>
+          ))}
+        </select>
+
+        <svg
+          viewBox="0 0 24 24"
+          width="18"
+          height="18"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+          className={`pointer-events-none absolute top-1/2 right-5 -translate-y-1/2 ${t.chevron}`}
+        >
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </div>
+    )
+  }
+)
+
+export const TextArea = forwardRef(
+  ({ id, tone = 'light', className = '', ...rest }, ref) => {
+    return (
+      <textarea
+        ref={ref}
+        id={id}
+        name={id}
+        className={`${base} ${TONES[tone].control} min-h-[140px] resize-y rounded-[10px] ${className}`}
+        {...rest}
+      />
+    )
+  }
+)
 
 /** Full-width pill submit button (reuses PrimaryButton). */
 export function SubmitButton({ children }) {
