@@ -1,6 +1,6 @@
 // Content + images for the Contact page. Image URLs come from the Framer template CDN (swap freely).
 const img = (id) => `https://framerusercontent.com/images/${id}`
-import profile from "../assets/images/contact.png";
+import profile from "../assets/images/contact.jpg";
 
 export const CONTACT_IMG = {
   hero: profile,
@@ -24,9 +24,10 @@ export const CONTACT_PAGE = {
     },
     {
       icon: 'mail',
-      title: 'Email',
+      title: 'Socials',
       lines: [
         { text: 'hospital@rupandehimodalhospital.com', href: 'https://mail.google.com/mail/?view=cm&fs=1&to=hospital@rupandehimodalhospital.com'},
+        { text: 'Rupandehi Modal Hospital : Facebook', href: 'https://www.facebook.com/profile.php?id=61579473053361'}
       ],
     },
     {

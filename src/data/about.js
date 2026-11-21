@@ -30,9 +30,9 @@ export const ABOUT_PAGE = {
       { title: 'Our vision', text: 'To become a leading healthcare provider recognized for clinical excellence and patient trust.' },
     ],
     stats: [
-      { to: 25, suffix: '+', label: 'Years of excellence' },
-      { to: 150, suffix: '+', label: 'Expert doctors' },
-      { to: 120, suffix: 'K+', label: 'Patients treated' },
+      { to: 20, suffix: '+', label: 'Years of excellence' },
+      { to: 10, suffix: '+', label: 'Expert doctors' },
+      { to: 15, suffix: 'K+', label: 'Patients treated' },
       { to: 98, suffix: '%', label: 'Patient satisfaction' },
     ],
   },

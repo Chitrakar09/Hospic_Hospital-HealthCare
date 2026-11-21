@@ -25,7 +25,7 @@ export const ABOUT = {
   text: 'We are committed to delivering exceptional healthcare through experienced professionals, modern facilities, and compassionate care for every patient.',
   cta: 'About us',
   stats: [
-    { to: 200, suffix: '+', label: 'Experienced doctors' },
+    { to: 10, suffix: '+', label: 'Experienced doctors' },
     { to: 98, suffix: '%', label: 'Patient satisfaction' },
     { to: '24/7', suffix: '', label: 'Emergency care' },
   ],
