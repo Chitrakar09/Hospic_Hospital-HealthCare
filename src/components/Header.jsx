@@ -56,19 +56,25 @@ export default function Header() {
               <a
                 key={n.label}
                 href={n.href}
-                aria-label="NOTICE"
-                className="group relative grid h-15 w-15 place-items-center text-white/90 transition-colors hover:text-white [&>svg]:h-7 [&>svg]:w-7 [&>svg]:fill-white"
+                aria-label="NOTICE AND NEWS"
+                className="group relative inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-2 text-white/90 transition-all duration-300 hover:-translate-y-0.5 hover:border-red-400/40 hover:bg-red-500/10 hover:text-white [&>svg]:h-5 [&>svg]:w-5 [&>svg]:fill-white"
               >
                 {NOTICES.length > 0 ? (
-                  <NewsNoticeBellActive className="h-7 w-7 fill-white text-white" />
+                  <NewsNoticeBellActive className="h-5 w-5 fill-white text-white" />
                 ) : (
-                  <NewsNoticeBellInactive className="h-7 w-7 fill-white text-white" />
+                  <NewsNoticeBellInactive className="h-5 w-5 fill-white text-white" />
                 )}
 
-                {/* Hover tooltip */}
-                <span className="pointer-events-none absolute bottom-full mb-1 whitespace-nowrap rounded border border-stroke-dark bg-dark px-2.5 py-1 text-xs font-semibold tracking-wider text-white opacity-0 shadow-md transition-opacity duration-200 group-hover:opacity-100">
-                  NOTICE
+                <span className="animate-pulse text-xs font-medium tracking-wider text-white/90 group-hover:text-white">
+                  NOTICE AND NEWS
                 </span>
+
+                {NOTICES.length > 0 && (
+                  <span className="relative flex h-2 w-2" aria-hidden="true">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-red-500" />
+                  </span>
+                )}
               </a>
             ) : null,
           )}
