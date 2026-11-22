@@ -15,7 +15,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col gap-4">
           <h3 className="t-h6 text-white">Essential pages</h3>
-          {NAV.map((n) => <a key={n.label} href={n.href} className="w-fit transition-colors duration-300 ease-linear hover:text-white">{n.label}</a>)}
+          {NAV.map((n) => <a key={n.label} href={n.href} className="nav-link w-fit transition-colors duration-300 ease-linear hover:text-white">{n.label}</a>)}
         </div>
         <div className="flex flex-col gap-4">
           <h3 className="t-h6 text-white">Contact info</h3>

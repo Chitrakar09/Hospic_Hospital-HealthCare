@@ -74,7 +74,7 @@
   left: -2px;
   bottom: 0;
   height: 1px;
-  width: 1px;
+  width: 0px;
   background: currentColor;
   transition: width 0.3s linear;
 }
