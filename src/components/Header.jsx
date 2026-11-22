@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { NAV, HERO, BLOG } from "../data/content.js";
-import { NOTICES } from "../data/notices.js";
+import { NAV } from "../data/constants/navigation.js";
+import { HERO } from "../data/constants/hero.js";
+import { NOTICES } from "../data/configs/notices.js";
 import Logo from "./Logo.jsx";
 import { PrimaryButton } from "./ui.jsx";
 import {

@@ -2,7 +2,7 @@
 import { useRef,useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 
-import { CONTACT_IMG, CONTACT_PAGE } from '../../data/contact.js'
+import { CONTACT_IMG, CONTACT_PAGE } from '../../data/constants/contact.js'
 import { SectionHeading } from '../../components/ui.jsx'
 import {
   FORM_GRID,

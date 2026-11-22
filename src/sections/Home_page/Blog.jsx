@@ -1,5 +1,4 @@
-import { A } from '../../data/assets.js'
-import { BLOG } from '../../data/content.js'
+import { BLOG, BLOG_ASSETS } from '../../data/configs/blog.js'
 import { Section, SectionHeading, Img } from '../../components/ui.jsx'
 
 function BlogCard({ title, date, category, photo }) {
@@ -23,7 +22,7 @@ export default function Blog() {
     <Section id="blog" innerClassName="flex flex-col items-center gap-[50px] desktop:gap-20">
       <SectionHeading tag={BLOG.tag} title={BLOG.title} align="center" className="max-w-[536px]" />
       <div className="grid w-full grid-cols-1 gap-x-5 gap-y-[60px] desktop:grid-cols-2">
-        {BLOG.items.map((b, i) => <BlogCard key={b.title} {...b} photo={A.blog[i]} />)}
+        {BLOG.items.map((b, i) => <BlogCard key={b.title} {...b} photo={BLOG_ASSETS[i]} />)}
       </div>
     </Section>
   )

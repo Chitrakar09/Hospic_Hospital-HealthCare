@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import { A } from '../../data/assets.js'
-import { ABOUT } from '../../data/content.js'
+import { ABOUT } from '../../data/constants/about.js'
+import { ABOUT_ASSETS } from '../../data/configs/about.js'
 import { Section, Tag, PrimaryButton, Img } from '../../components/ui.jsx'
 
 export function CountUp({ to, suffix }) {
@@ -48,8 +48,8 @@ export default function About() {
 
       <div className="flex flex-col gap-10 tablet:flex-row tablet:items-center tablet:justify-between">
         <div className="flex gap-3 tablet:gap-5">
-          <Img src={A.aboutLeft} alt="Doctors collaborating in a hospital corridor" className="h-[300px] w-[56%] tablet:h-[420px] tablet:w-[260px] desktop:h-[500px] desktop:w-[400px]" />
-          <Img src={A.aboutRight} alt="Surgeon preparing for an operation" className="h-[300px] w-[44%] tablet:h-[420px] tablet:w-[200px] desktop:h-[500px] desktop:w-[300px]" />
+          <Img src={ABOUT_ASSETS.aboutLeft} alt="Doctors collaborating in a hospital corridor" className="h-[300px] w-[56%] tablet:h-[420px] tablet:w-[260px] desktop:h-[500px] desktop:w-[400px]" />
+          <Img src={ABOUT_ASSETS.aboutRight} alt="Surgeon preparing for an operation" className="h-[300px] w-[44%] tablet:h-[420px] tablet:w-[200px] desktop:h-[500px] desktop:w-[300px]" />
         </div>
         <div className="flex w-full max-w-[450px] flex-col gap-10 tablet:pl-6 desktop:pl-[50px]">
           {ABOUT.stats.map((s, i) => (

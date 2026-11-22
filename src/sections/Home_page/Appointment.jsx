@@ -2,8 +2,8 @@
 import { useEffect, useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router'
-import { A } from '../../data/assets.js'
-import { APPOINTMENT, DOCTORS } from '../../data/content.js'
+import { APPOINTMENT, APPOINTMENT_ASSETS } from '../../data/configs/appointment.js'
+import { DOCTORS } from '../../data/configs/doctors.js'
 import { Section } from '../../components/ui.jsx'
 import {
   FORM_GRID,
@@ -159,7 +159,7 @@ Sent from Hospital Website
       <div className="relative flex flex-col gap-10 overflow-hidden bg-dark px-5 py-10 tablet:gap-[52px] tablet:px-[68px] rounded-2xl">
 
         <img
-          src={A.appointmentBg}
+          src={APPOINTMENT_ASSETS.appointmentBg}
           alt=""
           className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-60"
         />

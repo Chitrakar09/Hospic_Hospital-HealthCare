@@ -1,5 +1,4 @@
-import { A } from '../../data/assets.js'
-import { SERVICES } from '../../data/content.js'
+import { SERVICES, SERVICES_ASSETS } from '../../data/configs/services.js'
 import { Section, SectionHeading, PrimaryButton, Img } from '../../components/ui.jsx'
 
 /**
@@ -46,7 +45,7 @@ export default function Services() {
 
       <div className="flex w-full max-w-[640px] flex-col gap-5">
         {SERVICES.items.map((s, i) => (
-          <ServiceCard key={s.title} {...s} {...A.services[i % A.services.length]} index={i} />
+          <ServiceCard key={s.title} {...s} {...SERVICES_ASSETS[i % SERVICES_ASSETS.length]} index={i} />
         ))}
       </div>
     </Section>

@@ -1,4 +1,4 @@
-import { ABOUT_IMG, ABOUT_PAGE } from '../../data/about.js'
+import { ABOUT_IMG, ABOUT_PAGE } from '../../data/constants/about.js'
 import { Section, SectionHeading, Img } from '../../components/ui.jsx'
 
 /** Tablet + desktop: auto-scrolling ticker (60px/s, pauses on hover). Phone: static 2-column grid. */

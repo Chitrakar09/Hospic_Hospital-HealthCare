@@ -1,4 +1,4 @@
-import { ABOUT_IMG, ABOUT_PAGE } from '../../data/about.js'
+import { ABOUT_IMG, ABOUT_PAGE } from '../../data/constants/about.js'
 
 /** Inner-page hero: full-bleed photo, navy fade on the left, Heading 1 + body (Framer padding 310/235, 180/100, 140/80).
  *  Framer animates only the text container (rises 120px, spring). */

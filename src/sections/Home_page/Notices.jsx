@@ -1,5 +1,6 @@
 import { useMemo, useRef, useState } from 'react'
-import { NOTICES, NOTICES_SECTION } from '../../data/notices.js'
+import { NOTICES } from '../../data/configs/notices.js'
+import { NOTICES_SECTION } from '../../data/constants/notices.js'
 import { Section, SectionHeading, PrimaryButton } from '../../components/ui.jsx'
 import NoticeModal from '../../components/NoticeModal.jsx'
 

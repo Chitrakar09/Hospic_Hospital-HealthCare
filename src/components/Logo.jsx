@@ -1,4 +1,4 @@
-import { BRAND } from '../data/content.js'
+import { BRAND } from '../data/constants/brand.js'
 import logoImg from '../assets/images/logo.png'
 import { Link } from 'react-router'
 

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FAQ as C } from '../../data/content.js'
+import { FAQ as C } from '../../data/configs/faq.js'
 import { Section, SectionHeading, PrimaryButton } from '../../components/ui.jsx'
 import { Plus, Minus } from '../../components/Icons.jsx'
 

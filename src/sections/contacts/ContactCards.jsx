@@ -1,4 +1,4 @@
-import { CONTACT_PAGE } from '../../data/contact.js'
+import { CONTACT_PAGE } from '../../data/constants/contact.js'
 import { Phone, Pin } from '../../components/Icons.jsx'
 
 const Mail = (props) => (

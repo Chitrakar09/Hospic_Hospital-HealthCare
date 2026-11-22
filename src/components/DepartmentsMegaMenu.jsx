@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { A } from "../data/assets.js";
-import { DEPARTMENTS, HERO } from "../data/content.js";
+import { DEPARTMENTS, DEPARTMENTS_ASSETS } from "../data/configs/departments.js";
+import { HERO } from "../data/constants/hero.js";
 import { PrimaryButton } from "./ui.jsx";
 import { ChevronDown, HealthCross } from "./Icons.jsx";
 
 /*
  * Departments mega menu (desktop) + accordion (phone / tablet).
  *
- * - Department list is rendered from DEPARTMENTS.items (content.js); icons come from A.departments (assets.js)
+ * - Department list is rendered from DEPARTMENTS.items (data/configs/departments.js); icons come from DEPARTMENTS_ASSETS (same file)
  *   by position. A department without an icon asset falls back to the HealthCross icon.
  * - Department links point at the existing #departments section (no new routes).
  * - The promo image is the one the Framer template uses in its Dropdown Large component.
@@ -20,7 +20,7 @@ const DEPARTMENT_HREF = "#departments";
 const CLOSE_DELAY = 120; // ms grace period so the pointer can cross the gap between trigger and panel
 
 function DepartmentIcon({ index, size }) {
-  const icon = A.departments[index]?.icon;
+  const icon = DEPARTMENTS_ASSETS[index]?.icon;
   return icon ? (
     <img
       src={icon}
