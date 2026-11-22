@@ -15,7 +15,7 @@ export default function ContactPage() {
   return (
     <>
       <ContactHero />
-      <Section id="contact" innerClassName="flex flex-col gap-5 desktop:gap-[30px]">
+      <Section id="contact" reveal innerClassName="flex flex-col gap-5 desktop:gap-[30px]">
         <ContactCards />
         <ContactForm />
       </Section>

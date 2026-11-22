@@ -1,53 +1,21 @@
-import { useEffect, useRef, useState } from 'react'
 import { A } from '../../data/assets.js'
 import { SERVICES } from '../../data/content.js'
 import { Section, SectionHeading, PrimaryButton, Img } from '../../components/ui.jsx'
 
 /**
- * Card stacking (same mechanism as the Framer template): from tablet up every card is `position: sticky`
- * with the same top offset (80px), so each card pins there while the next one scrolls over it. Later cards
- * sit on top (DOM order + z-index 1). On phones the cards are plain blocks, as in the template.
+ * Card stacking, exactly as the Framer template builds it: from tablet up every card is `position: sticky` with the
+ * same top offset (80px), so each card pins there while the next one scrolls over it; later cards sit on top.
+ * Phones render plain blocks. Desktop also pins the heading column. The whole container rises in once (Framer appear).
  */
 const STACK_TOP = 80    // px: where the cards pin (Framer: positionStickyTop 80px)
 const STACK_OFFSET = 0  // px: extra top offset per card. 0 = cards cover each other exactly (original);
                         // e.g. 12 lets the edge of each earlier card peek out above the next.
 
-function useInView(threshold = 0.15) {
-  const ref = useRef(null)
-  const [visible, setVisible] = useState(false)
-
-  useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setVisible(true)
-      return
-    }
-    const el = ref.current
-    if (!el) return
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return
-        setVisible(true)
-        io.disconnect()
-      },
-      { threshold }
-    )
-    io.observe(el)
-    return () => io.disconnect()
-  }, [threshold])
-
-  return [ref, visible]
-}
-
 function ServiceCard({ title, text, icon, photo, index }) {
-  const [ref, visible] = useInView(0.15)
-
   return (
     <article
-      ref={ref}
       style={{ '--stack-top': `${STACK_TOP + index * STACK_OFFSET}px` }}
-      className={`relative z-[1] flex flex-col-reverse gap-5 bg-light-bg p-5 transition-all duration-700 ease-out tablet:sticky tablet:top-[var(--stack-top)] tablet:flex-row tablet:items-center tablet:gap-[30px] ${
-        visible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
-      }`}
+      className="relative z-[1] flex flex-col-reverse gap-5 bg-light-bg p-5 tablet:sticky tablet:top-[var(--stack-top)] tablet:flex-row tablet:items-center tablet:gap-[30px]"
     >
       <div className="flex flex-1 flex-col justify-between gap-10 tablet:min-h-[200px] tablet:gap-[55px] tablet:py-[10px] tablet:pl-[10px]">
         <img src={icon} alt="" className="h-[49px] w-[49px] object-contain" loading="lazy" />
@@ -62,38 +30,18 @@ function ServiceCard({ title, text, icon, photo, index }) {
 }
 
 export default function Services() {
-  const [headerRef, headerVisible] = useInView(0.2)
-
   return (
     // `desktop:items-start` lets the heading column be shorter than the cards column so it can stay sticky.
-    <Section id="services" innerClassName="flex flex-col justify-between gap-[60px] desktop:flex-row desktop:items-start desktop:gap-[100px]">
-      <div
-        ref={headerRef}
-        className="flex max-w-[470px] flex-col items-start gap-10 desktop:sticky desktop:top-20 desktop:gap-[60px] desktop:pr-10"
-      >
-        <div
-          className={`transition-all duration-700 ease-out ${
-            headerVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-          }`}
-        >
-          <SectionHeading tag={SERVICES.tag} title={SERVICES.title} />
-        </div>
-        <div
-          className={`transition-all duration-700 delay-200 ease-out ${
-            headerVisible ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-4 scale-95 opacity-0'
-          }`}
-        >
-          <div className="transition-transform duration-300 ease-out hover:-translate-y-1 hover:scale-105">
-            <PrimaryButton
-              as="a"
-              href="#appointment"
-              variant="outline"
-              className="transition-shadow duration-300 hover:shadow-lg"
-            >
-              {SERVICES.cta}
-            </PrimaryButton>
-          </div>
-        </div>
+    <Section
+      id="services"
+      reveal
+      innerClassName="flex flex-col justify-between gap-[60px] desktop:flex-row desktop:items-start desktop:gap-[100px]"
+    >
+      <div className="flex max-w-[470px] flex-col items-start gap-10 desktop:sticky desktop:top-20 desktop:gap-[60px] desktop:pr-10">
+        <SectionHeading tag={SERVICES.tag} title={SERVICES.title} />
+        <PrimaryButton as="a" href="#appointment" variant="outline">
+          {SERVICES.cta}
+        </PrimaryButton>
       </div>
 
       <div className="flex w-full max-w-[640px] flex-col gap-5">
