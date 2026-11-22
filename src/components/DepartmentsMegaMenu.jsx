@@ -232,7 +232,7 @@ const hasMore = DEPARTMENTS.items.length > 6
             />
             <div className="relative flex flex-col items-start gap-[30px] p-[30px]">
               <p className="t-h6 text-white">{PROMO_TITLE}</p>
-              <PrimaryButton variant="light" onClick={close} as={'a'} href="#appointment">
+              <PrimaryButton variant="light" onClick={close} to="/#appointment">
                 <span className="capitalize">{HERO.cta}</span>
               </PrimaryButton>
             </div>

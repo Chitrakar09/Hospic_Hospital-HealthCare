@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from 'react'
 import { useForm } from 'react-hook-form'
-
+import { Link } from 'react-router'
 import { A } from '../../data/assets.js'
 import { APPOINTMENT, DOCTORS } from '../../data/content.js'
 import { Section } from '../../components/ui.jsx'
@@ -392,6 +392,9 @@ Sent from Hospital Website
           </div>
 
         </form>
+      </div>
+      <div className='text-center mt-10'>
+        <Link to={'/#top'} className='hover:underline hover:underline-offset-4 hover:text-blue-500'>Back To Top</Link>
       </div>
     </Section>
   )

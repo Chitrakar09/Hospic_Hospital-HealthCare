@@ -8,7 +8,7 @@ export const CONTACT_IMG = {
 }
 
 export const CONTACT_PAGE = {
-  documentTitle: 'Contact us – Hospic',
+  documentTitle: 'Contact us – Rupandehi Model Hospital',
   hero: {
     title: 'Contact us',
     text: 'Have a question or need to book an appointment? Our friendly team is here to help — reach out anytime.',

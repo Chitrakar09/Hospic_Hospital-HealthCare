@@ -16,7 +16,7 @@ export const ABOUT_IMG = {
 }
 
 export const ABOUT_PAGE = {
-  documentTitle: 'About us – Hospic',
+  documentTitle: 'About us – Rupandehi Model Hospital',
   hero: {
     title: 'About us',
     text: 'We are committed to delivering exceptional healthcare through experienced professionals, modern facilities, and compassionate care for every patient.',

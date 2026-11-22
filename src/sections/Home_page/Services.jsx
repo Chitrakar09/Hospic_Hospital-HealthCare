@@ -3,6 +3,15 @@ import { A } from '../../data/assets.js'
 import { SERVICES } from '../../data/content.js'
 import { Section, SectionHeading, PrimaryButton, Img } from '../../components/ui.jsx'
 
+/**
+ * Card stacking (same mechanism as the Framer template): from tablet up every card is `position: sticky`
+ * with the same top offset (80px), so each card pins there while the next one scrolls over it. Later cards
+ * sit on top (DOM order + z-index 1). On phones the cards are plain blocks, as in the template.
+ */
+const STACK_TOP = 80    // px: where the cards pin (Framer: positionStickyTop 80px)
+const STACK_OFFSET = 0  // px: extra top offset per card. 0 = cards cover each other exactly (original);
+                        // e.g. 12 lets the edge of each earlier card peek out above the next.
+
 function useInView(threshold = 0.15) {
   const ref = useRef(null)
   const [visible, setVisible] = useState(false)
@@ -29,13 +38,14 @@ function useInView(threshold = 0.15) {
   return [ref, visible]
 }
 
-function ServiceCard({ title, text, icon, photo }) {
+function ServiceCard({ title, text, icon, photo, index }) {
   const [ref, visible] = useInView(0.15)
 
   return (
     <article
       ref={ref}
-      className={`flex flex-col-reverse gap-5 bg-light-bg p-5 transition-all duration-700 ease-out tablet:flex-row tablet:items-center tablet:gap-[30px] ${
+      style={{ '--stack-top': `${STACK_TOP + index * STACK_OFFSET}px` }}
+      className={`relative z-[1] flex flex-col-reverse gap-5 bg-light-bg p-5 transition-all duration-700 ease-out tablet:sticky tablet:top-[var(--stack-top)] tablet:flex-row tablet:items-center tablet:gap-[30px] ${
         visible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
       }`}
     >
@@ -55,10 +65,11 @@ export default function Services() {
   const [headerRef, headerVisible] = useInView(0.2)
 
   return (
-    <Section id="services" innerClassName="flex flex-col justify-between gap-[60px] desktop:flex-row desktop:gap-[100px]">
+    // `desktop:items-start` lets the heading column be shorter than the cards column so it can stay sticky.
+    <Section id="services" innerClassName="flex flex-col justify-between gap-[60px] desktop:flex-row desktop:items-start desktop:gap-[100px]">
       <div
         ref={headerRef}
-        className="flex max-w-[470px] flex-col items-start gap-10 desktop:gap-[60px] desktop:pr-10"
+        className="flex max-w-[470px] flex-col items-start gap-10 desktop:sticky desktop:top-20 desktop:gap-[60px] desktop:pr-10"
       >
         <div
           className={`transition-all duration-700 ease-out ${
@@ -87,7 +98,7 @@ export default function Services() {
 
       <div className="flex w-full max-w-[640px] flex-col gap-5">
         {SERVICES.items.map((s, i) => (
-          <ServiceCard key={s.title} {...s} {...A.services[i]} />
+          <ServiceCard key={s.title} {...s} {...A.services[i % A.services.length]} index={i} />
         ))}
       </div>
     </Section>
