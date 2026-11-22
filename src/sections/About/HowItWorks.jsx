@@ -1,4 +1,4 @@
-import { ABOUT_PAGE } from '../../data/about.js'
+import { ABOUT_PAGE } from '../../data/constants/about.js'
 import { Section, SectionHeading } from '../../components/ui.jsx'
 
 /** Framer "How It Work Card" has no hover state; "Title & Tag" and "Card Wrapper" rise together (120px, once). */

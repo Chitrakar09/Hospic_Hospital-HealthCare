@@ -1,5 +1,4 @@
-import { A } from '../../data/assets.js'
-import { TESTIMONIALS } from '../../data/content.js'
+import { TESTIMONIALS, TESTIMONIALS_ASSETS } from '../../data/configs/testimonials.js'
 import { Section, SectionHeading, Img } from '../../components/ui.jsx'
 import { Play } from '../../components/Icons.jsx'
 
@@ -42,7 +41,7 @@ export default function Testimonials() {
           t.type === 'video' ? (
             <VideoCard key={t.text} {...t} />
           ) : (
-            <TextCard key={t.name} {...t} avatar={A.testimonialAvatars[textIndex++ % A.testimonialAvatars.length]} />
+            <TextCard key={t.name} {...t} avatar={TESTIMONIALS_ASSETS[textIndex++ % TESTIMONIALS_ASSETS.length]} />
           )
         )}
       </div>

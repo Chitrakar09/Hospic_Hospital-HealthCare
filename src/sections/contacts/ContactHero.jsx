@@ -1,4 +1,4 @@
-import { CONTACT_IMG, CONTACT_PAGE } from '../../data/contact.js'
+import { CONTACT_IMG, CONTACT_PAGE } from '../../data/constants/contact.js'
 
 /** Centered inner-page hero: full-screen crisp photo under a subtle dark overlay.
  *  Framer animates only the text container (rises 120px, spring). */

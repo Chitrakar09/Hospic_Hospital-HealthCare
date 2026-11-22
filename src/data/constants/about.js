@@ -1,7 +1,21 @@
+// About content: the home-page About section (ABOUT) and the About page (ABOUT_IMG, ABOUT_PAGE).
 // Content + images for the About page. Images come from the Framer template CDN (swap freely).
-const img = (id) => `https://framerusercontent.com/images/${id}`
-import profile from "../assets/images/about.jpg";
+import { img } from '../helpers.js'
+import profile from "../../assets/images/about.jpg";
 
+// ---- Home page: About section ----
+export const ABOUT = {
+  tag: 'About us',
+  text: 'We are committed to delivering exceptional healthcare through experienced professionals, modern facilities, and compassionate care for every patient.',
+  cta: 'About us',
+  stats: [
+    { to: 10, suffix: '+', label: 'Experienced doctors' },
+    { to: 98, suffix: '%', label: 'Patient satisfaction' },
+    { to: '24/7', suffix: '', label: 'Emergency care' },
+  ],
+}
+
+// ---- About page ----
 export const ABOUT_IMG = {
   hero: profile,
   team: img('uP3NGPgglkJjd1KZB48FChkZEA.png'),

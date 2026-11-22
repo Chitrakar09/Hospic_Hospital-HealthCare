@@ -1,4 +1,4 @@
-import { PRICING } from '../../data/content.js'
+import { PRICING } from '../../data/configs/pricing.js'
 import { Section, SectionHeading, PrimaryButton } from '../../components/ui.jsx'
 import { Check } from '../../components/Icons.jsx'
 

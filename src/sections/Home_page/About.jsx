@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import { A } from '../../data/assets.js'
-import { ABOUT } from '../../data/content.js'
+import { ABOUT } from '../../data/constants/about.js'
+import { ABOUT_ASSETS } from '../../data/configs/about.js'
 import { Section, Tag, PrimaryButton, Img } from '../../components/ui.jsx'
 
 function CountUp({ to, suffix }) {
@@ -59,14 +59,14 @@ export default function About() {
         <div className="flex gap-3 tablet:gap-5">
           <div className="w-[56%] tablet:w-auto">
             <Img
-              src={A.aboutLeft}
+              src={ABOUT_ASSETS.aboutLeft}
               alt="Doctors collaborating in a hospital corridor"
               className="h-[300px] w-full tablet:h-[420px] tablet:w-[260px] desktop:h-[500px] desktop:w-[400px]"
             />
           </div>
           <div className="w-[44%] tablet:w-auto">
             <Img
-              src={A.aboutRight}
+              src={ABOUT_ASSETS.aboutRight}
               alt="Surgeon preparing for an operation"
               className="h-[300px] w-full tablet:h-[420px] tablet:w-[200px] desktop:h-[500px] desktop:w-[300px]"
             />

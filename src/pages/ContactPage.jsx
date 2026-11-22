@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { CONTACT_PAGE } from '../data/contact.js'
+import { CONTACT_PAGE } from '../data/constants/contact.js'
 import { Section } from '../components/ui.jsx'
 import ContactHero from '../sections/contacts/ContactHero.jsx'
 import ContactCards from '../sections/contacts/ContactCards.jsx'

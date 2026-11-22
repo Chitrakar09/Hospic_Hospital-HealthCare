@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react'
-import { A } from '../../data/assets.js'
-import { DOCTORS } from '../../data/content.js'
+import { DOCTORS, DOCTORS_ASSETS } from '../../data/configs/doctors.js'
 import { Section, SectionHeading, PrimaryButton } from '../../components/ui.jsx'
 import { Plus, Phone, Pin } from '../../components/Icons.jsx'
 
@@ -95,7 +94,7 @@ export default function Doctors({ initialCount = Infinity }) {
         <div id="doctors-grid" className="grid w-full grid-cols-1 gap-[30px] tablet:grid-cols-2 desktop:grid-cols-3">
           {visible.map((d, i) => (
             // Photos live in assets.js by position; cycle them if there are more doctors than photos.
-            <DoctorCard key={d.name} doctor={d} photo={A.doctors[i % A.doctors.length]} />
+            <DoctorCard key={d.name} doctor={d} photo={DOCTORS_ASSETS[i % DOCTORS_ASSETS.length]} />
           ))}
         </div>
 

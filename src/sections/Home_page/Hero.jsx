@@ -1,5 +1,5 @@
-import { HERO } from "../../data/content.js";
-import { A } from "../../data/assets.js";
+import { HERO } from "../../data/constants/hero.js";
+import { HOME_ASSETS } from "../../data/configs/home.js";
 import { PrimaryButton } from "../../components/ui.jsx";
 
 /**
@@ -13,7 +13,7 @@ export default function Hero() {
       className="relative flex h-dvh items-center overflow-hidden bg-dark px-5 pt-[140px] pb-20 tablet:px-[30px] tablet:pt-[180px] tablet:pb-[100px] desktop:pt-[220px] desktop:pb-[145px]"
     >
       <img
-        src={A.hero}
+        src={HOME_ASSETS.hero}
         alt=""
         data-reveal
         data-reveal-y="0"

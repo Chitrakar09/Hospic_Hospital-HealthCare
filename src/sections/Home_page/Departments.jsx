@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react'
-import { A } from '../../data/assets.js'
-import { DEPARTMENTS } from '../../data/content.js'
+import { DEPARTMENTS, DEPARTMENTS_ASSETS } from '../../data/configs/departments.js'
 import { Section, SectionHeading, PrimaryButton, Img } from '../../components/ui.jsx'
 
 const INITIAL_COUNT = 4
@@ -52,7 +51,7 @@ export default function Departments() {
         <div id="departments-grid" className="grid grid-cols-1 gap-5 desktop:grid-cols-2">
           {visible.map((d, i) => (
             // Photos/icons live in assets.js by position; cycle them if there are more departments than assets.
-            <DepartmentCard key={d.title} {...d} {...A.departments[i % A.departments.length]} />
+            <DepartmentCard key={d.title} {...d} {...DEPARTMENTS_ASSETS[i % DEPARTMENTS_ASSETS.length]} />
           ))}
         </div>
 

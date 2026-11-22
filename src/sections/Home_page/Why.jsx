@@ -1,5 +1,4 @@
-import { A } from '../../data/assets.js'
-import { WHY } from '../../data/content.js'
+import { WHY, WHY_ASSETS } from '../../data/configs/why.js'
 import { Section, SectionHeading, Img } from '../../components/ui.jsx'
 import { WHY_ICONS } from '../../components/Icons.jsx'
 
@@ -30,7 +29,7 @@ export default function Why() {
         </div>
 
         <Img
-          src={A.whyBanner}
+          src={WHY_ASSETS.whyBanner}
           alt="Modern hospital building and care team"
           className="h-[260px] w-full tablet:h-[400px] desktop:h-[591px]"
         />

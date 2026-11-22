@@ -1,4 +1,5 @@
-import { FOOTER, NAV } from '../data/content.js'
+import { FOOTER } from '../data/constants/footer.js'
+import { NAV } from '../data/constants/navigation.js'
 import Logo from '../components/Logo.jsx'
 
 export default function Footer() {
