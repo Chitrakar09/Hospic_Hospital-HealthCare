@@ -57,9 +57,11 @@ export default function Notices() {
 
   return (
     <Section id="notices" innerClassName="flex flex-col items-center gap-[50px] desktop:gap-[60px]">
-      <SectionHeading tag={NOTICES_SECTION.tag} title={NOTICES_SECTION.title} align="center" className="max-w-[536px]" />
+      <div data-reveal className="w-full max-w-[536px]">
+        <SectionHeading tag={NOTICES_SECTION.tag} title={NOTICES_SECTION.title} align="center" />
+      </div>
 
-      <div className="flex w-full max-w-[960px] flex-col items-center gap-[40px]">
+      <div data-reveal className="flex w-full max-w-[960px] flex-col items-center gap-[40px]">
         <div role="group" aria-label="Sort notices" className="flex w-full justify-end gap-2">
           {SORT_OPTIONS.map((o) => (
             <button

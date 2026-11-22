@@ -45,9 +45,9 @@ function MegaMenuItem({ title, text, index }) {
   return (
     <li className="min-w-0">
       <span
-        className="group flex min-w-0 items-center gap-[14px] border-b border-bg-color pb-[34px] transition-colors duration-300 hover:border-primary"
+        className="line-grow group flex min-w-0 items-center gap-[14px] border-b border-bg-color pb-[34px]"
       >
-        <span className="grid h-[50px] w-[50px] shrink-0 place-items-center rounded-md bg-light-bg transition-colors duration-300 group-hover:bg-blue-500">
+        <span className="grid h-[50px] w-[50px] shrink-0 place-items-center rounded-md bg-light-bg tile-fill group-hover:bg-primary">
           <DepartmentIcon index={index} size={30} />
         </span>
         <span className="flex min-w-0 flex-1 flex-col gap-0.5">
@@ -163,7 +163,7 @@ const hasMore = DEPARTMENTS.items.length > 6
         aria-expanded={open}
         aria-haspopup="true"
         aria-controls="departments-mega-menu"
-        className="t-highlight inline-flex items-center gap-1 text-white/90 transition-colors hover:text-white"
+        className="nav-link t-highlight inline-flex items-center gap-1 text-white/90 transition-colors hover:text-white"
       >
         {label}
         <ChevronDown

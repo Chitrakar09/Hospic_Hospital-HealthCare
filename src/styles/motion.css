@@ -1,0 +1,107 @@
+/* Motion system reproducing the Framer template's animations.
+   - Appear effect: opacity 0 -> 1 and translateY(120px) -> 0, spring(stiffness 280, damping 60, mass 1), once.
+   - Hover springs: button 0.8s/0.1, cards 0.6s/0, icon tiles 0.4s/0.2, lines 0.4s/0.
+   Springs are expressed as CSS linear() easings generated from the real spring equations. */
+
+:root {
+  --dur-appear: 1.12s;
+  --ease-appear: linear(0, 0.069, 0.1819, 0.2905, 0.3866, 0.47, 0.5422, 0.6046, 0.6584, 0.705, 0.7452, 0.7799, 0.8099, 0.8358, 0.8582, 0.8775, 0.8942, 0.9086, 0.921, 0.9318, 0.9411, 0.9491, 0.9561, 0.962, 0.9672, 0.9717, 0.9755, 0.9789, 0.9817, 0.9842, 0.9864, 0.9882, 0.9898, 0.9912, 0.9924, 0.9935, 0.9943, 0.9951, 0.9958, 1);
+  --dur-btn: 0.72s;
+  --ease-btn: linear(0, 0.0096, 0.0354, 0.073, 0.1191, 0.1709, 0.2261, 0.2829, 0.3399, 0.396, 0.4504, 0.5025, 0.5517, 0.598, 0.641, 0.6808, 0.7173, 0.7507, 0.781, 0.8084, 0.833, 0.8551, 0.8748, 0.8922, 0.9077, 0.9213, 0.9332, 0.9436, 0.9527, 0.9606, 0.9674, 0.9732, 0.9782, 0.9824, 0.986, 0.989, 0.9916, 0.9937, 0.9954, 1);
+  --dur-card: 0.75s;
+  --ease-card: linear(0, 0.0178, 0.0623, 0.1233, 0.1932, 0.2668, 0.3404, 0.4115, 0.4786, 0.5409, 0.5977, 0.6491, 0.6952, 0.7361, 0.7722, 0.8039, 0.8317, 0.8558, 0.8767, 0.8948, 0.9104, 0.9238, 0.9353, 0.9452, 0.9536, 0.9607, 0.9668, 0.972, 0.9764, 0.9801, 0.9833, 0.9859, 0.9882, 0.9901, 0.9917, 0.993, 0.9941, 0.9951, 0.9959, 1);
+  --dur-tile: 0.49s;
+  --ease-tile: linear(0, 0.0175, 0.063, 0.1274, 0.2034, 0.2853, 0.3688, 0.4508, 0.5288, 0.6014, 0.6676, 0.7269, 0.7793, 0.8248, 0.8639, 0.8969, 0.9244, 0.9469, 0.9652, 0.9796, 0.9908, 0.9993, 1.0055, 1.0099, 1.0127, 1.0144, 1.0151, 1.0151, 1.0146, 1.0138, 1.0127, 1.0115, 1.0102, 1.009, 1.0078, 1.0066, 1.0056, 1.0046, 1.0038, 1);
+  --dur-line: 0.5s;
+  --ease-line: linear(0, 0.0178, 0.0623, 0.1233, 0.1932, 0.2668, 0.3404, 0.4115, 0.4786, 0.5409, 0.5977, 0.6491, 0.6952, 0.7361, 0.7722, 0.8039, 0.8317, 0.8558, 0.8767, 0.8948, 0.9104, 0.9238, 0.9353, 0.9452, 0.9536, 0.9607, 0.9668, 0.972, 0.9764, 0.9801, 0.9833, 0.9859, 0.9882, 0.9901, 0.9917, 0.993, 0.9941, 0.9951, 0.9959, 1);
+}
+/* Browsers without linear(): close cubic-bezier fallbacks */
+@supports not (transition-timing-function: linear(0, 1)) {
+  :root {
+    --ease-appear: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-btn: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-card: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-tile: cubic-bezier(0.34, 1.2, 0.64, 1);
+    --ease-line: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+/* ---------- Appear on mount / in view (data-reveal) ----------
+   Only active when JS has added .motion-ok to <html> (not for reduced-motion users), so content can never stay hidden. */
+.motion-ok [data-reveal] {
+  transition:
+    opacity var(--dur-appear) var(--ease-appear) var(--rv-d, 0s),
+    transform var(--dur-appear) var(--ease-appear) var(--rv-d, 0s);
+}
+.motion-ok [data-reveal]:not([data-revealed]) {
+  opacity: 0;
+  transform: translate3d(0, var(--rv-y, 120px), 0) scale(var(--rv-s, 1));
+}
+.motion-ok [data-reveal][data-revealed] {
+  opacity: 1;
+  transform: none; /* no leftover transform: keeps position: sticky and stacking contexts clean */
+}
+
+/* ---------- Primary Button: the icon circle expands into a pill (Framer "Primary Button" hover) ---------- */
+.btn-pill {
+  transition: width var(--dur-btn) var(--ease-btn);
+}
+.group:hover > .btn-pill,
+.group:focus-visible > .btn-pill {
+  width: calc(100% - 10px);
+}
+.btn-text {
+  transition: color var(--dur-btn) var(--ease-btn);
+}
+
+/* ---------- Card / tile hovers ---------- */
+.zoom-card {
+  transition: transform var(--dur-card) var(--ease-card);
+}
+.tile-fill {
+  transition:
+    background-color var(--dur-tile) var(--ease-tile),
+    color var(--dur-tile) var(--ease-tile);
+}
+
+/* ---------- Nav / footer links: 1px underline grows left -> right on hover (Framer "Menu" hover, tween 0.3s) ---------- */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  bottom: 0;
+  height: 1px;
+  width: 1px;
+  background: currentColor;
+  transition: width 0.3s linear;
+}
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  width: calc(100% + 2px);
+}
+
+/* ---------- Mega menu item: primary line grows over the divider (Framer "Menu Large" hover, 0.4s) ---------- */
+.line-grow {
+  position: relative;
+}
+.line-grow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 1px;
+  width: 0;
+  background: var(--color-primary, #106ad9);
+  transition: width var(--dur-line) var(--ease-line);
+}
+.line-grow:hover::after,
+.line-grow:focus-within::after {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-pill, .btn-text, .zoom-card, .tile-fill, .nav-link::after, .line-grow::after { transition-duration: 0.01ms !important; }
+}

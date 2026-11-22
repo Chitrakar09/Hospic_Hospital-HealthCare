@@ -155,7 +155,7 @@ Sent from Hospital Website
   }
 
   return (
-    <Section id="appointment" top={false}>
+    <Section id="appointment" top={false} reveal>
       <div className="relative flex flex-col gap-10 overflow-hidden bg-dark px-5 py-10 tablet:gap-[52px] tablet:px-[68px] rounded-2xl">
 
         <img

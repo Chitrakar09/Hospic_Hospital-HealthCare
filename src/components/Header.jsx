@@ -37,7 +37,7 @@ export default function Header() {
                 <NavLink
                   key={n.label}
                   to={n.href}
-                  className="t-highlight text-white/90 transition-colors hover:text-white"
+                  className="nav-link t-highlight text-white/90 transition-colors hover:text-white"
                 >
                   {n.label}
                 </NavLink>
