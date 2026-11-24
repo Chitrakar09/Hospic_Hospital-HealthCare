@@ -1,5 +1,5 @@
 import { BRAND } from '../data/constants/brand.js'
-import logoImg from '../assets/images/logo.png'
+import logoImg from '../assets/images/components/logo.png'
 import { Link } from 'react-router'
 
 export default function Logo({ light = true }) {

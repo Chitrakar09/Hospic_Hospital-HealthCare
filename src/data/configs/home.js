@@ -1,4 +1,4 @@
-import profile from "../../assets/images/profile.png";
+import profile from "../../assets/images/components/profile.png";
 
 // Home page hero image (also reused by the CTA banner) and the video section's video.
 export const HOME_ASSETS = {

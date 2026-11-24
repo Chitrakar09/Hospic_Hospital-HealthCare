@@ -1,7 +1,7 @@
 // About content: the home-page About section (ABOUT) and the About page (ABOUT_IMG, ABOUT_PAGE).
 // Content + images for the About page. Images come from the Framer template CDN (swap freely).
 import { img } from '../helpers.js'
-import profile from "../../assets/images/about.jpg";
+import profile from "../../assets/images/components/about.jpg";
 
 // ---- Home page: About section ----
 export const ABOUT = {

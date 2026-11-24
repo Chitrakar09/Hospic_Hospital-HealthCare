@@ -1,6 +1,6 @@
 // Content + images for the Contact page. Image URLs come from the Framer template CDN (swap freely).
 import { img } from '../helpers.js'
-import profile from "../../assets/images/contact.jpg";
+import profile from "../../assets/images/components/contact.jpg";
 
 export const CONTACT_IMG = {
   hero: profile,
