@@ -19,7 +19,7 @@ export default function Hero() {
         data-reveal-y="0"
         data-reveal-scale="1.1"
         className="absolute inset-0 h-full w-full object-cover"
-        fetchPriority="High"
+        fetchpriority="high"
       />
 
       <div data-reveal data-reveal-delay="0.1" className="relative mx-auto w-full max-w-container">
